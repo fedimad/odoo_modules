@@ -2,9 +2,9 @@
 
 
 {
-    'name': 'Import Order lines ( Purchase / Sale )XLS(x)',
+    'name': 'Import Purchase / Sale Order lines .XLS(x)',
     'version': '10.0.1.0.0',
-    'author': '<< fed_imad@hotmail.fr >>',
+    'author': 'fed_imad@hotmail.fr',
     'website': '',
     'license': 'AGPL-3',
     'category': 'Sales,Purchase',
