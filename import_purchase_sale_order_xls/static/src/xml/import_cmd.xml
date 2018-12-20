@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+
+  <t t-extend="ListView.buttons">
+    <t t-jquery="button.o_list_button_discard" t-operation="after">
+        <t t-if="widget.model=='purchase.order'">
+            <button class="btn btn-sm btn-default btn-success fa fa-file-excel-o o_import_bc_xls" icon="fa-cogs" type="button"> Import</button>
+        </t>
+        <t t-if="widget.model=='sale.order'">
+            <button class="btn btn-sm btn-default btn-success fa fa-file-excel-o o_import_dv_xls" icon="fa-cogs" type="button"> Import</button>
+        </t>
+    </t>
+  </t>
+</templates>
