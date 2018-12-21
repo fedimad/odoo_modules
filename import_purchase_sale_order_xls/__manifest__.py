@@ -5,7 +5,7 @@
     'name': 'Import Purchase / Sale Order lines .XLS(x)',
     'version': '10.0.1.0.0',
     'author': 'fed_imad@hotmail.fr',
-    'website': '',
+    'website': 'https://github.com/fedimad/odoo_modules',
     'license': 'AGPL-3',
     'category': 'Sales,Purchase',
     'summary': "Import a purchase & a sale order from an .xls/.xlsx file",
