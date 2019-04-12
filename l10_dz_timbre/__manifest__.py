@@ -4,7 +4,7 @@
 # Copyright (c) 2019  -
 
 {
-    'name': 'Algerie - Timbre Fiscal avec écriture de timbre',
+    'name': 'Algeria - Timbre Fiscal avec écriture de timbre',
     'version': '0.4',
     'author': '< fed_imad@hotmail.fr > < toufik.aimar@gmail.com >',
     'website': 'https://github.com/fedimad/odoo_modules',
