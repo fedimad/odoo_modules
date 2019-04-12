@@ -7,9 +7,9 @@
     'name': 'Algerie - Timbre Fiscal avec écriture de timbre',
     'version': '0.4',
     'author': '< fed_imad@hotmail.fr > < toufik.aimar@gmail.com >',
-    'website': '',
+    'website': 'https://github.com/fedimad/odoo_modules',
     'category': 'Accounting',
-    'summary': 'Timbre avec ecriture comptable',
+    'summary': 'Timbre avec écriture comptable',
     'description': """
 This is the module to manage the Fiscal Timbre in Odoo.
 ========================================================================
