@@ -4,7 +4,7 @@
 # Copyright (c) 2019  -
 
 {
-    'name': 'Algerie - Timbre Fiscal',
+    'name': 'Algerie - Timbre Fiscal avec écriture de timbre',
     'version': '0.4',
     'author': '< Feddad Imad // Toufik Aimar>',
     'website': '',
