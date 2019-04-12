@@ -6,7 +6,7 @@
 {
     'name': 'Algerie - Timbre Fiscal Avec écriture',
     'version': '0.4',
-    'author': '< Fed_imad@hotmail.fr > < toufik.aimar@gmail.com >',
+    'author': '< Fed_imad@hotmail.fr > < toufik.aimar@gmail.com>',
     'website': '',
     'category': 'Accounting',
     'summary': 'Timbre avec ecriture comptable',
