@@ -23,17 +23,17 @@ This module applies to companies based in Algeria.
     'depends': ['l10n_dz'],
     'data': [
 
-	'data/timbre_data.xml',
+    'data/timbre_data.xml',
 
     'security/ir.model.access.csv',
 
-	'views/timbre_view.xml',
+    'views/timbre_view.xml',
     'views/sale_view.xml',
-	'views/purchase_view.xml',
-	'views/payment_invoice_view.xml',
+    'views/purchase_view.xml',
+    'views/payment_invoice_view.xml',
 
     ],
-
+    'images': ['static/description/banner.jpg'],
     'installable': True,
     'application': False,
     'auto_install': False,
