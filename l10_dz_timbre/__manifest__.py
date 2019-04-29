@@ -5,7 +5,7 @@
 
 {
     'name': 'Algerie - Timbre fiscal avec écriture comptable',
-    'version': '0.4',
+    'version': '11.0.1.0.0',
     'author': 'fed_imad@hotmail.fr',
     'website': 'https://github.com/fedimad/odoo_modules',
     'category': 'Accounting',
