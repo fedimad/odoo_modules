@@ -4,9 +4,9 @@
 # Copyright (c) 2019  -
 
 {
-    'name': 'Algerie - Timbre fiscal avec écriture comptable',
-    'version': '10.0.1.0.0',
-    'author': 'fed_imad@hotmail.fr',
+    'name': 'Algerie - Timbre Fiscal avec écriture comptable',
+    'version': '0.4',
+    'author': '< fed_imad@hotmail.fr >',
     'website': 'https://github.com/fedimad/odoo_modules',
     'category': 'Accounting',
     'summary': 'Timbre avec écriture comptable',
@@ -33,9 +33,7 @@ This module applies to companies based in Algeria.
     'views/payment_invoice_view.xml',
 
     ],
-
     'images': ['static/description/banner.jpg'],
-
     'installable': True,
     'application': False,
     'auto_install': False,
