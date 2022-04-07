@@ -11,8 +11,8 @@
     "category": "Purchase, Sale",
     "depends": ['purchase', 'sale', 'barcodes'],
     "description": """
-This is the module to help use your barcode scanned when inserting product lines.
-=================================================================================
+The Purpose of this the module is to help use your barcode scanner when inserting product lines.
+================================================================================================
 
 **Email:** fed_imad@hotmail.fr
 """,
