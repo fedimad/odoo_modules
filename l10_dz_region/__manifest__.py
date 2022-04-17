@@ -4,7 +4,7 @@
 # Copyright (c) 2022  - feddad.imad@gmail.com
 
 {
-    'name': "Algérie - 58 Wilaya d'algérie",
+    'name': "Algérie - 58 Wilaya d'alger",
     'version': '22.1',
     'category': 'Accounting',
     'description': """
