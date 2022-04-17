@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 #
-# Copyright (c) 2019 
+# Copyright (c) 2016  - Aghil@s - www.Aghil@s-dz.net
 
-import models
+from . import models
