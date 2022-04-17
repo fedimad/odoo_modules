@@ -26,6 +26,8 @@ This module applies to companies based in Algeria.
 	'views/res_commune.xml'
     ],
 
+    'images': ['static/description/banner.jpg'],
+
     'installable': True,
     'application': False,
     'auto_install': False,
