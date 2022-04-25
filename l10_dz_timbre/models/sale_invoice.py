@@ -24,8 +24,8 @@ class PurchaseOrderr(models.Model):
                 timbre = self.env['config.timbre']._timbre(order.amount_total)
                 self.timbre = timbre['timbre']
                 amount_timbre = timbre['amount_timbre']
-            self.amount_timbre = amount_timbre
-            order.amount_total = self.amount_timbre
+            order.amount_timbre = amount_timbre
+            order.amount_total = order.amount_timbre
 
     @api.onchange('payment_term_id')
     def onchange_payment_term(self):
@@ -59,8 +59,8 @@ class SaleOrder(models.Model):
                 timbre = self.env['config.timbre']._timbre(order.amount_total)
                 self.timbre = timbre['timbre']
                 amount_timbre = timbre['amount_timbre']
-            self.amount_timbre = amount_timbre
-            order.amount_total = self.amount_timbre
+            order.amount_timbre = amount_timbre
+            order.amount_total = order.amount_timbre
 
     @api.onchange('payment_term_id')
     def onchange_payment_term(self):
