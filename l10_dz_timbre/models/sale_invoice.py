@@ -22,7 +22,7 @@ class PurchaseOrderr(models.Model):
             amount_timbre = order.amount_total
             if order.payment_term_id and order.payment_term_id.payment_type == 'cash':
                 timbre = self.env['config.timbre']._timbre(order.amount_total)
-                self.timbre = timbre['timbre']
+                order.timbre = timbre['timbre']
                 amount_timbre = timbre['amount_timbre']
             order.amount_timbre = amount_timbre
             order.amount_total = order.amount_timbre
@@ -57,7 +57,7 @@ class SaleOrder(models.Model):
             amount_timbre = order.amount_total
             if order.payment_term_id and order.payment_term_id.payment_type == 'cash':
                 timbre = self.env['config.timbre']._timbre(order.amount_total)
-                self.timbre = timbre['timbre']
+                order.timbre = timbre['timbre']
                 amount_timbre = timbre['amount_timbre']
             order.amount_timbre = amount_timbre
             order.amount_total = order.amount_timbre
