@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 #
-# Copyright (c) 2016  - Aghil@s - www.Aghil@s-dz.net
+# Copyright (c) 2022  - feddad.imad@gmail.com
+
 
 
 from math import ceil
 from odoo import fields, models, api,_
-from openerp.exceptions import ValidationError,UserError
+from odoo.exceptions import ValidationError,UserError
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -150,7 +151,6 @@ class AccountMove(models.Model):
                         total_untaxed_currency += line.amount_currency
                         total += line.balance
                         total_currency += line.amount_currency
-                        _logger.warning(' \n \n total_currency1***********************total_currency1 %s' %(total_currency))
                     elif line.istimbre:
                         # amount & total amount timbre.
                         amount_timbre += line.amount_currency
@@ -158,14 +158,12 @@ class AccountMove(models.Model):
                         total_untaxed_currency += line.amount_currency
                         total += line.balance
                         total_currency += line.amount_currency
-                        _logger.warning(' \n \n total_currency1***********************total_currency1 %s' %(total_currency))
                     elif line.tax_line_id:
                         # Tax amount.
                         total_tax += line.balance
                         total_tax_currency += line.amount_currency
                         total += line.balance
                         total_currency += line.amount_currency
-                        _logger.warning(' \n \n total_currency2***********************total_currency2 %s' %(total_currency))
                     elif line.account_id.user_type_id.type in ('receivable', 'payable'):
                         # Residual amount.
                         total_to_pay += line.balance
@@ -176,7 +174,6 @@ class AccountMove(models.Model):
                     if line.debit:
                         total += line.balance
                         total_currency += line.amount_currency
-                        _logger.warning(' \n \n total_currency3***********************total_currency3 %s' %(total_currency))
 
             if move.move_type == 'entry' or move.is_outbound():
                 sign = 1
@@ -303,14 +300,12 @@ class AccountMove(models.Model):
         def _compute_timbre(self,total_balance ):
             today_date = fields.Date.context_today(self)
             result = []
-            _logger.warning(' \n total_balance*********************** total_balance %s' %(total_balance))
             amount_timbre = abs(total_balance)
             if self.invoice_payment_term_id and self.invoice_payment_term_id.payment_type == 'cash':
                 timbre = self.env['config.timbre']._timbre(amount_timbre)
                 amount_timbre = timbre['timbre'] if self.move_type in ('out_invoice') else -timbre['timbre']
                 amount_timbre_total = timbre['amount_timbre'] if self.move_type in ('in_invoice') else - timbre['amount_timbre']
             result.append((today_date, amount_timbre_total, amount_timbre))
-            _logger.warning('  result*********************** result %s' %(result))
             return result
 
 
@@ -350,7 +345,6 @@ class AccountMove(models.Model):
             # Recompute amls: update existing line or create new one for each payment term.
             new_terms_lines = self.env['account.move.line']
             i = 0
-            _logger.warning(' \n to_compute*********************** to_compute %s' %(to_compute))
             for date_maturity, balance, amount_currency in to_compute:
                 currency = self.journal_id.company_id.currency_id
                 if currency and currency.is_zero(balance) and len(to_compute) > 1:
@@ -361,7 +355,6 @@ class AccountMove(models.Model):
                         # Update existing line.
                         candidate = existing_terms_lines[existing_terms_lines_index]
                         existing_terms_lines_index += 1
-                        _logger.warning(' \n \n balance***********************balance foi %s' %(balance))
                         candidate.update({
                             'date_maturity': date_maturity,
                             'amount_currency': -amount_currency,
@@ -404,7 +397,6 @@ class AccountMove(models.Model):
                                     })
                             else:
                                 create_method = in_draft_mode and self.env['account.move.line'].new or self.env['account.move.line'].create
-                                _logger.warning(' \n \n amount_timbre***********************amount_timbre %s' %(amount_timbre))
                                 candidate2 = create_method({
                                     'name': 'Timbre' ,
                                     'debit': amount_timbre < 0.0 and -amount_timbre or 0.0,
