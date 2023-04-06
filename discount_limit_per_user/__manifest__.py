@@ -23,8 +23,10 @@ Main Features
 
 Required modules:
     * sale
+
+**Email:** feddad.imad@gmail.com
     """,
-    'author': '< feddad.imad@gmail.com >',
+    'author': 'feddad.imad@gmail.com',
     'website': '',
     'category': 'Sale',
     'sequence': 0,
