@@ -16,7 +16,7 @@ This is the module to manage the Fiscal Timbre in Odoo.
 
 **Email:** feddad.imad@gmail.com
 """,
-    'author': 'imad.feddad@hotmail.fr, Prodigital',
+    'author': 'feddad.imad@gmail.com, Prodigital',
     'website': 'https://prodigital.dz/',
     'depends': ['sale','account','purchase', 'base'],
     'data': [

@@ -24,7 +24,7 @@ Main Features
 Required modules:
     * sale
 
-**Email:** imad.feddad@gmail.com
+**Email:** feddad.imad@gmail.com
     """,
     'author': 'feddad.imad@gmail.com',
     'website': '',
