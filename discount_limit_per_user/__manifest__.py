@@ -24,7 +24,7 @@ Main Features
 Required modules:
     * sale
     """,
-    'author': '< feddad.imad@gmail.com >',
+    'author': 'feddad.imad@gmail.com',
     'website': '',
     'category': 'Sale',
     'sequence': 0,
