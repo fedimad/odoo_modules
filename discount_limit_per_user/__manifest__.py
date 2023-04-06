@@ -23,6 +23,8 @@ Main Features
 
 Required modules:
     * sale
+
+**Email:** imad.feddad@gmail.com
     """,
     'author': 'feddad.imad@gmail.com',
     'website': '',
@@ -39,6 +41,7 @@ Required modules:
     ],
 
     'qweb': [],
+    'images': ['static/description/banner.jpg'],
     'installable': True,
     'application': True,
 }
