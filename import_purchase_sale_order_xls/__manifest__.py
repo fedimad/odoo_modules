@@ -31,7 +31,7 @@
     ],
 
     'qweb': ['static/src/xml/import_cmd.xml'],
-
+    'images':['static/description/banner.gif'],
     'installable': True,
     'application': True,
     'demo': [],
