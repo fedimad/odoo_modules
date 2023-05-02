@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+            <record id="dl_sale_view_order_form_inherit" model="ir.ui.view">
+                <field name="name">dl.sale.view.order.form.inherit</field>
+                <field name="model">sale.order</field>
+                <field name="inherit_id" ref="sale.view_order_form"/>
+                <field name="arch" type="xml">
+
+                    <xpath expr="//field[@name='pricelist_id']" position="after">
+                        <field name="public_pricelist" invisible="1"/>
+                        <field name="discount_user" invisible="1"/>
+                    </xpath>
+                    <xpath expr="//form/sheet/notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='discount']" position="attributes">
+                        <attribute name="attrs">{'readonly': ['|',('parent.public_pricelist', '!=', True),('parent.discount_user', '=',False)]}</attribute>
+                    </xpath>
+
+                </field>
+            </record>
+
+
+
+</odoo>                    

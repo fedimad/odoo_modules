@@ -6,7 +6,8 @@
             <field name="model">wizard.import.purchase.order</field>
             <field name="arch" type="xml">
                 <form string="Import RFQ (code, quantity, price) .XLS(x)">
-
+                    <p style="font-size:17px;">Vous devez créer un fichier de format .xlsx ou .xls, <br/>
+                       Le fichier doit contenir les colonnes <strong>code</strong>, <strong>qunatity</strong>, <strong>prix</strong></p>
                     <group>
                         <group>
                             <field name="file_data" filename="file_name" widget="binary" required="1" class="oe_inline"/>
@@ -24,6 +25,15 @@
             </field>
         </record>
 
-
+       <record id="purchase_order_inherited_tree_view" model="ir.ui.view">
+           <field name="name">purchase.order.view.tree.inherit</field>
+           <field name="model">purchase.order</field>
+           <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+           <field name="arch" type="xml">
+               <xpath expr="//tree" position="attributes">
+                   <attribute name="js_class">button_in_tree</attribute>
+               </xpath>
+           </field>
+       </record>
 
     </odoo>
