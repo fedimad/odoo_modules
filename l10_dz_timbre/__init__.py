@@ -3,4 +3,4 @@
 #
 # Copyright (c) 2019 
 
-import models
+from . import models
