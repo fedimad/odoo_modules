@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+       <!--Account purchase: Form-->
+       <record model="ir.ui.view" id="purchase_order_dz">
+           <field name="name">purchase order view form dz</field>
+           <field name="model">purchase.order</field>
+           <field name="inherit_id" ref="purchase.purchase_order_form"/>
+           <field name="arch" type="xml">
+
+
+                 <field name="amount_tax" position="after">
+                    <field name="timbre" widget='monetary' options="{'currency_field': 'currency_id'}"
+                           attrs="{'invisible': [('payment_type', '!=', 'cash')]}"/>
+                 </field>
+                 <!--<field name="amount_total" position="after">
+                    <field name="amount_timbre" widget='monetary' class="oe_subtotal_footer_separator" options="{'currency_field': 'currency_id'}"
+                           attrs="{'invisible': [('payment_type', '!=', 'cash')]}"/>
+                 </field>-->
+
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="payment_type" invisible="1"/>
+                </xpath>
+            </field>
+       </record>
+
+
+
+       <!--Account sale: Form-->
+       <record model="ir.ui.view" id="sale_order_dz">
+           <field name="name">sale order view form dz</field>
+           <field name="model">sale.order</field>
+           <field name="inherit_id" ref="sale.view_order_form"/>
+           <field name="arch" type="xml">
+                 <field name="payment_term_id" position="after">
+                     <field name="payment_type" invisible="1"/>
+                 </field>
+                 <field name="amount_tax" position="after">
+                    <field name="timbre" widget='monetary' options="{'currency_field': 'currency_id'}"
+                           attrs="{'invisible': [('payment_type', '!=', 'cash')]}"/>
+                 </field>
+
+                 <!-- discount view -->
+                 <!-- <xpath expr="//field[@name='state']" position="before">
+                    <button string="Approve" type="object" name="action_approve" states="waiting" class="oe_highlight"
+                            groups="sales_team.group_sale_manager"/>
+                </xpath> -->
+                <!-- <xpath expr="//button[@name='action_cancel']" position="attributes">
+                    <attribute name="states">draft,sent,sale,waiting</attribute>
+                </xpath> -->
+                <xpath expr="//group[@name='note_group']" position="replace">
+                    <group name="note_group" col="6">
+                        <group name="discount" colspan="2">
+                            <field name="discount_type"/>
+                            <field name="discount_rate"/>
+                        </group>
+
+                        <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                            <field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            <field name="amount_discount" widget='monetary' string='Remise:'
+                                   options="{'currency_field': 'currency_id'}"/>
+                            <field name="amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="amount_total"/>
+                                <button name="button_dummy"
+                                        states="draft,sent" string="(update)" type="object"
+                                        class="oe_edit_only oe_link"/>
+                            </div>
+                            <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator"
+                                   widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                        <group colspan="4">
+                            <field name="note" nolabel="1" placeholder="Terms and conditions..."/>
+                        </group>
+                        <div class="oe_clear"/>
+                    </group>
+
+                </xpath>
+                <!-- <field name="amount_total" position="after">
+                    <field name="amount_timbre" widget='monetary' class="oe_subtotal_footer_separator" options="{'currency_field': 'currency_id'}"
+                           attrs="{'invisible': [('payment_type', '!=', 'cash')]}"/>
+                 </field>-->
+            </field>
+       </record>
+
+    <!--Account invoice: Form-->
+
+
+       <record model="ir.ui.view" id="account_move_dz_timbre">
+           <field name="name">account move view form dz timbre</field>
+           <field name="model">account.move</field>
+           <field name="inherit_id" ref="account.view_move_form"/>
+           <field name="arch" type="xml">
+                 <field name="invoice_payment_term_id" position="after">
+                     <field name="payment_type" invisible="1"/>
+                 </field>
+                 <field name="amount_by_group" position="after">
+                    <field name="timbre" widget='monetary' options="{'currency_field': 'currency_id'}"
+                           attrs="{'invisible': [('payment_type', '!=', 'cash')]}"/>
+                 </field>
+                <!-- <field name="amount_total" position="after">
+                    <field name="amount_timbre" widget='monetary' class="oe_subtotal_footer_separator" options="{'currency_field': 'currency_id'}"
+                           attrs="{'invisible': [('payment_type', '!=', 'cash')]}"/>
+                 </field>-->
+                 <xpath expr="//field[@name='discount']" position="attributes">
+                    <attribute name="digits">[16, 2]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount_untaxed']" position="after">
+                        <field name="total_pieces_ht"/>
+                        <field name="total_services_ht"/>
+                        <field name="amount_discount"/>
+                </xpath>
+                <xpath expr="//field[@name='narration']" position="after">
+                    <div>
+                        <label for="discount_type" string="Discount Type :"/>
+                        <field name="discount_type" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="discount_rate" string="Discount Rate :"/>
+                        <field name="discount_rate" class="oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+       </record>
+
+
+  </data>
+</odoo>
