@@ -29,7 +29,7 @@ which free android App (used Firebase Push Notifications)
     ],
     'demo': [
     ],
-    'images': ['static/description/banner.jpg'],
+    'images': ['static/description/banner.png'],
     'installable': True,
     'auto_install': False,
     'application': True,
