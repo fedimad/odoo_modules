@@ -34,7 +34,7 @@ class MobileAppPushNotification(models.Model):
         ('cancel', 'Cancel'),
         ('error', 'Error'),
     ]
-    # cred = credentials.Certificate("/opt/odoo/..../data/serviceAccountKey.json")
+    cred = credentials.Certificate("/opt/odoo/..../data/serviceAccountKey.json")
 
     firebase_admin.initialize_app(cred)
 
