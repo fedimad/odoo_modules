@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <menuitem name="Envoyer Notifications"
+            id="menu_firebase_push_notification_push"
+            web_icon="firebase_push_notification,static/description/icon.png"
+            sequence="6"/>
+
+        <record id="firebase_push_notification_push_notification_tree_view" model="ir.ui.view">
+            <field name="name">mobile.app.push.notification.tree.view</field>
+            <field name="model">mobile.app.push.notification</field>
+            <field name="arch" type="xml">
+                <tree  string="Push Notification" sample="1" decoration-danger="state == 'cancel'" decoration-success="state =='done'" decoration-warning="state =='error'" decoration-primary="state =='more_parts'">
+                    <field name="name"/>
+                    <field name="body"/>
+                    <field name="send_notification_to" />
+
+                    <field name="state" widget="badge" decoration-muted="state == 'draft'" decoration-success="state == 'done'" decoration-danger="state == 'cancel'" decoration-warning="state == 'error'" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="firebase_push_notification_push_notification_form_view" model="ir.ui.view">
+            <field name="name">mobile.app.push.notification.form</field>
+            <field name="model">mobile.app.push.notification</field>
+            <field name="arch" type="xml">
+                <form string="Push Notification"  >
+                    <header>
+                        <button name="send_notification" id="send_notification" states="draft" string="Send" class="btn-primary" type='object'/>
+                        
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="Info Notification">
+                                <field name="name"/>
+                                <field name="body"/>
+                                <field name="send_notification_to"/>
+                                <field name="partner_ids" widget="many2many_tags" domain="[('customer_rank', '>', 0)]" attrs="{'invisible': [('send_notification_to', '=', 'to_all')]}"/>
+                            </group>
+                            <group>
+                                <field name="log_history" 
+                                       widget="section_and_note_one2many"
+                                       mode="tree,kanban"
+                                       readonly="1"
+                                       >
+                                    <tree string="History" readonly="1" decoration-success="notification_state == 'success'" decoration-danger="notification_state =='failed'">
+                                        <field name="date_send"/>                       
+                                        <field name="notification_state" widget="badge" decoration-success="notification_state == 'success'" decoration-danger="notification_state =='failed'"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_firebase_push_notification_push_notification" model="ir.actions.act_window">
+            <field name="name">Envoyer notifications</field>
+            <field name="res_model">mobile.app.push.notification</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                   Créer votre première notification
+                </p>
+                <p>
+                   Odoo vous aide facilement à suivre toutes les notifications envoyèes à vos clients.
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="Notifications"
+            action="action_firebase_push_notification_push_notification"
+            id="menu_send_notification"
+            parent="menu_firebase_push_notification_push"
+            sequence="20"/>
+
+
+    </data>
+</odoo>
