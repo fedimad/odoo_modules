@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+
+
+
+    <t t-inherit="account.TaxTotalsField" t-inherit-mode="extension">
+        <xpath expr="//t[1]" position="inside">
+               <tr t-if="totals.value.timbre">
+                    <td class="o_td_label">
+                        <label class="o_form_label o_tax_total_label">Timbre</label>
+                    </td>
+
+                    <td>
+                        <span
+                            name="timbre"
+                            t-esc="totals.value.timbre"
+                        /> DA
+                    </td>
+                </tr>
+        </xpath>
+    </t>
+
+
+
+</templates>
