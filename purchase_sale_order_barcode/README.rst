@@ -1,5 +1,5 @@
-Purchase Order Barcode
-======================
+Purchase / Sale Order Barcode
+=============================
 With Odoo <a href="https://github.com/fedimad/odoo_modules/">Purchase/Sale Barcode</a>,
 You will be able to Add Product using barcode scanner.
 
