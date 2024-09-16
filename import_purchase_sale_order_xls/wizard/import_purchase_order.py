@@ -1,4 +1,10 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+##############################################################################
+#                                                                            #
+#    Odoo                                                                    #
+#    Copyright (C) 2022-2023 Feddad Imad (feddad.imad@gmail.com)             #
+#                                                                            #
+##############################################################################
 
 import os
 import csv
@@ -7,6 +13,7 @@ from odoo.exceptions import UserError
 from odoo import api, fields, models, _, SUPERUSER_ID
 from datetime import datetime, timedelta, date
 import xlrd, mmap, xlwt
+import base64
 
 
 
@@ -15,7 +22,7 @@ class ImportPurchaseOrder(models.TransientModel):
 
     file_data = fields.Binary('Archive', required=True,)
     file_name = fields.Char('File Name')
-    partner_id = fields.Many2one('res.partner', string='Partner', required=True,domain=[('supplier', '=', True)])
+    partner_id = fields.Many2one('res.partner', string='Partner', required=True, domain=[('customer_rank', '>', 0)])
 
 
     def import_button(self):
@@ -24,7 +31,7 @@ class ImportPurchaseOrder(models.TransientModel):
         file_path = tempfile.gettempdir()+'/file.xlsx'
         data = self.file_data
         f = open(file_path,'wb')
-        f.write(data.decode('base64'))
+        f.write(base64.b64decode(data))
         f.close() 
 
 
@@ -127,14 +134,14 @@ class ImportPurchaseOrder(models.TransientModel):
     @api.model
     def valid_columns_keys(self, archive_lines):
         columns = archive_lines[0].keys()
-        print "columns>>",columns
+       # print "columns>>",columns
         text = "The file must contain the following columns: code, quantity, and price. \n The following columns are not in the file:"; text2 = text
         if not 'code' in columns:
-            text +="\n| code |"
+            text +="\n[ code ]"
         if not u'quantity' in columns:
-            text +="\n| quantity |"
+            text +="\n[ quantity ]"
         if not 'price' in columns:
-            text +="\n| price |"
+            text +="\n[ price ]"
         if text !=text2:
             raise UserError(text)
         return True
@@ -149,7 +156,6 @@ class purchase_order(models.Model):
     _inherit = 'purchase.order'
 
 
-    @api.multi
     def action_view_order(self,purchase_order_id):
         action = self.env.ref('purchase.purchase_rfq').read()[0]
         action['views'] = [(self.env.ref('purchase.purchase_order_form').id, 'form')]

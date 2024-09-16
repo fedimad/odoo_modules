@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+##############################################################################
+#                                                                            #
+#    Odoo                                                                    #
+#    Copyright (C) 2022-2023 Feddad Imad (feddad.imad@gmail.com)             #
+#                                                                            #
+##############################################################################
 
-import import_purchase_order
-import import_sale_order
+from . import import_purchase_order
+# from . import import_sale_order

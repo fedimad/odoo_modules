@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="firebase_push_notification_push_notification_log_partner_tree_view" model="ir.ui.view">
+            <field name="name">push.notification.log.partner.tree.view</field>
+            <field name="model">push.notification.log.partner</field>
+            <field name="arch" type="xml">
+                <tree  string="Log Partner" sample="1" decoration-warning="state == 'not_viewed'" decoration-success="state =='viewed'" decoration-danger="state == 'failed'">
+                    <field name="name"/>
+                    <field name="body"/>
+                    <field name="date_send"/>
+                    <field name="partner_id" />
+                    <field name="notification_state" decoration-danger="state == 'failed'" decoration-success="state =='success'"/>
+
+                    <field name="state" widget="badge" decoration-warning="state == 'not_viewed'" decoration-success="state =='viewed'" decoration-danger="state =='failed'" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="firebase_push_notification_push_notification_log_partner_form_view" model="ir.ui.view">
+            <field name="name">push.notification.log.partner.form</field>
+            <field name="model">push.notification.log.partner</field>
+            <field name="arch" type="xml">
+                <form string="Notification Log"  >
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="not_viewed,viewed" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="Info Notification">
+                                <field name="name"/>
+                                <field name="body"/>
+                                <field name="date_send"/>
+                                <field name="partner_id"/>
+                                <field name="notification_state"/>
+                            </group>
+                            <group string="Info Device">
+                                <field name="device_token"/>
+                                <field name="notification_state"/>
+                            </group>
+                        </group>                   
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_notification_log_partner" model="ir.actions.act_window">
+            <field name="name">Log Client</field>
+            <field name="res_model">push.notification.log.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" eval="False"/>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                   Créer votre première notification
+                </p>
+                <p>
+                   Odoo vous aide facilement à suivre toutes les notifications envoyèes à vos clients.
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem name="Log Client"
+            action="action_notification_log_partner"
+            id="menu_notification_log_partner"
+            parent="menu_firebase_push_notification_push"
+            sequence="30"/>
+    </data>
+</odoo>

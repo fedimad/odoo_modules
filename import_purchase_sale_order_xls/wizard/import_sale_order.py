@@ -129,11 +129,11 @@ class ImportSaleOrder(models.TransientModel):
         print "columns>>",columns
         text = "The file must contain the following columns: code, quantity, and price. \n The following columns are not in the file:"; text2 = text
         if not 'code' in columns:
-            text +="\n| code |"
+            text +="\n[ code ]"
         if not u'quantity' in columns:
-            text +="\n| quantity |"
+            text +="\n[ quantity ]"
         if not 'price' in columns:
-            text +="\n| price |"
+            text +="\n[ price ]"
         if text !=text2:
             raise UserError(text)
         return True
