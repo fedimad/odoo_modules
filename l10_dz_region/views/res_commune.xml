@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Commune -->
+        <record id="view_commune_tree" model="ir.ui.view">
+            <field name="name">res.commune.tree</field>
+            <field name="model">res.commune</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Commune">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="state_id"/>
+                    <field name="country_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_commune" model="ir.actions.act_window">
+            <field name="name">Communes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.commune</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Commune" id="menu_commune" action="action_commune" parent="contacts.menu_localisation" sequence="2"/>
+
+
+
+    </data>
+</odoo>
