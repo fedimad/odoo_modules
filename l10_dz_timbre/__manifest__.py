@@ -4,33 +4,32 @@
 # Copyright (c) 2022  - feddad.imad@gmail.com
 
 {
-    'name': 'Algérie - Timbre Fiscal avec écriture comptable',
-    'version': '22.1',
+    'name': "Algérie - 58 Wilaya d'algérie",
+    'version': '24.1',
     'category': 'Accounting',
     'description': """
-This is the module to manage the Fiscal Timbre in Odoo.
+This is the module to manage the wilaya & commune for Algeria in Odoo.
 ========================================================================
 
-
+This module applies to companies based in Algeria.
 .
 
 **Email:** feddad.imad@gmail.com
 """,
-    'author': 'feddad.imad@gmail.fr, Prodigital',
-    'depends': ['sale','account','purchase', 'base'],
+    'author': 'feddad.imad@gmail.com',
+    'depends': ['sale','contacts','base'],
     'data': [
-
-	'data/timbre_data.xml',
-    'security/ir.model.access.csv',
-    'data/res.bank.csv',
-	'views/timbre_view.xml',
-    'views/sale_invoice_view.xml',
-    
+	    'security/ir.model.access.csv',
+        'data/wilayas_data.xml',
+        'data/commune_data.xml',
+        'views/res_commune.xml',
+        'views/res_country_state.xml',
+	    'views/res_partner.xml'
     ],
-
     'images': ['static/description/banner.jpg'],
 
     'installable': True,
     'application': False,
     'auto_install': False,
 }
+
