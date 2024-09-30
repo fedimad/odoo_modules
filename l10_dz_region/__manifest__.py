@@ -26,6 +26,7 @@ This module applies to companies based in Algeria.
         'views/res_country_state.xml',
 	    'views/res_partner.xml'
     ],
+   'images': ['static/description/banner.gif'], 
 
     'installable': True,
     'application': False,
