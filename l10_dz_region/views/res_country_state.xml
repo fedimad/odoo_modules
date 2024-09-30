@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- VIEWS -->
+
+
+
+     <record id="l10_dz_region_res_country_state_tree_inherit" model="ir.ui.view">
+        <field name="name">l10n.dz.regions.res.country.state.tree.inherit</field>
+        <field name="model">res.country.state</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+                <tree string="State">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="country_id" options="{'no_create': True, 'no_open': True}"/>
+                    <!-- <button name="action_read_state" type="object" icon="fa-external-link" class="oe_highlight"/> -->
+                </tree>
+        </field>
+    </record> 
+
+
+
+    <record id="l10_dz_region_res_country_state_form" model="ir.ui.view">
+        <field name="name">l10n.dz.region.res.country.state.form</field>
+        <field name="model">res.country.state</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <form string="Sales Order" class="o_sale_order">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="country_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Communes">
+                            <field name="commune_ids" string="Communes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="l10_dz_region_view_country_state_search" model="ir.ui.view">
+        <field name="name">l10.dz.region.res.country.state.search</field>
+        <field name="model">res.country.state</field>
+        <field name="arch" type="xml">
+            <search string="Country">
+                <filter name="countryalg" string="Algérie" domain="[('country_id', 'ilike', 'Algérie')]" icon="fa-list"/>
+                <field name="name"/>
+                <separator/>
+                <field name="country_id" string="Pays"/>
+                <group string="Group By">
+                    <filter name="groupby_country" string="Pays" context="{'group_by': 'country_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="base.action_country_state" model="ir.actions.act_window">
+        <field name="name">État - States</field>
+        <field name="res_model">res.country.state</field>
+        <field name="view_mode">tree,form</field> <!-- Make sure "form" is included -->
+        <field name="search_view_id" ref="l10_dz_region_view_country_state_search"/>
+        <field name="view_id" ref="l10_dz_region_res_country_state_tree_inherit"/> <!-- Link to the correct tree view -->
+        <field name="context">{"search_default_countryalg":1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a State
+            </p>
+            <p>
+                Federal States belong to countries and are part of your contacts' addresses.
+            </p>
+        </field>
+    </record>
+
+
+
+
+
+
+
+
+
+</odoo>
