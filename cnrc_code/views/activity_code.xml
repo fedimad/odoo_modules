@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Commune -->
+        <record id="view_activity_code_tree" model="ir.ui.view">
+            <field name="name">activity.code.tree</field>
+            <field name="model">activity.code</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Commune">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="regulation"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_activity_code" model="ir.actions.act_window">
+            <field name="name">Code d'activité</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">activity.code</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Code d'activité" id="menu_cnrc_code" action="action_activity_code" parent="account.account_account_menu" sequence="20"/>
+
+
+
+    </data>
+</odoo>
