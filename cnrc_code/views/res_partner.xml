@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+
+<!--         <record id="cnrc_code_res_partner_form_inherit"  model="ir.ui.view">
+            <field name="name">cnrc_code_res_partner_form_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/sheet/group/group[0]/field[@name='vat']" position="replace">
+                </xpath>       
+                   
+            </field>
+        </record> -->
+
+
+        <record id="cnrc_code_view_partner_property_form"  model="ir.ui.view">
+            <field name="name">cnr.code.view.partner.property.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page[@name='accounting']/group" position="inside">
+                    <group string="Information Fiscale">
+                        <field name="vat" string="NIF"/>
+                        <field name="activity_code" widget="many2many_tags"/>
+                    </group>
+                </xpath>       
+                   
+            </field>
+        </record>
+
+
+</odoo>
