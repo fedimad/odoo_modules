@@ -4,7 +4,7 @@
 {
     'name': 'Import Purchase / Sale Order lines .XLS(x)',
     'version': '11.0.1.0.0',
-    'author': 'fed_imad@hotmail.fr',
+    'author': 'feddad.imad@gmail.com',
     'website': 'https://github.com/fedimad/odoo_modules',
     'license': 'AGPL-3',
     'category': 'Sales,Purchase',
