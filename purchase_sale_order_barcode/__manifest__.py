@@ -6,7 +6,7 @@
     "name": "Purchase/Sale Barcode",
     "summary": "Add Product With Barcode at Purchase/Sale Order",
     "version": "10.0.1.0.0",
-    "author": '< fed_imad@hotmail.fr >',
+    "author": 'feddad.imad@gmail.com',
     "website": 'https://github.com/fedimad/odoo_modules',
     "category": "Purchase, Sale",
     "depends": ['purchase', 'sale', 'barcodes'],
@@ -14,7 +14,7 @@
 The purpose of this module is to help use your barcode scanner when inserting product lines.
 ============================================================================================
 
-**Email:** fed_imad@hotmail.fr
+**Email:** feddad.imad@gmail.com
 """,
     "data": [
         'views/purchase_sale_order_views.xml',
