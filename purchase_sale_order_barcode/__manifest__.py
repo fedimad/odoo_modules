@@ -14,7 +14,7 @@
 The purpose of this module is to help use your barcode scanner when inserting product lines.
 ============================================================================================
 
-**Email:** fed_imad@hotmail.fr
+**Email:** feddad.imad@gmail.com
 """,
     "data": [
         'views/purchase_sale_order_views.xml',
