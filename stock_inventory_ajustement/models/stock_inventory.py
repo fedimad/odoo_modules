@@ -401,7 +401,6 @@ class InventoryAdjustmentsGroup(models.Model):
                     quant.to_do = True
                     quant.current_inventory_id = self.id
                     quant.inventory_date = self.date
-                    quant.current_inventory_id = self.id
                     _logger.warning('\n\n action_state_to_in_progress ************** quant.todo 22222 =  %s \n\n' %(quant.ids))
                     quant_ids.append(quant.id)
                     
@@ -412,6 +411,9 @@ class InventoryAdjustmentsGroup(models.Model):
                         'location_id': location.id,
                         'lot_id': lot_id.id if lot_id else False,
                         'quantity': quantity,
+                        'to_do' : True,
+                        'current_inventory_id' : self.id,
+                        'inventory_date' : self.date,
                     })
 
             # Batch create new quants
@@ -799,6 +801,8 @@ class InventoryAdjustmentsLine(models.Model):
         Finally, this override checks we don't try to create a duplicated line.
         """
         for values in vals_list:
+            if not values['location_id']:
+                raise ValidationError("Vous devez insérer la localisation")
             if 'theoretical_qty' not in values:
                 theoretical_qty = self.env['product.product'].get_theoretical_quantity(
                     values['product_id'],
