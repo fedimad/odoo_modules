@@ -52,7 +52,7 @@ class InventoryAdjustmentsGroup(models.Model):
     state = fields.Selection(
         [
             ("draft", "Draft"),
-            ('validation1', 'First Validation'),
+            ('validation1', 'Première Validation'),
             ("in_progress", "In Progress"),
             ("done", "Done"),
             ("cancel", "Cancelled"),
