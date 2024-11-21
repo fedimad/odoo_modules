@@ -15,7 +15,7 @@
         "views/stock_move_line.xml",
         "views/res_config_settings_view.xml",
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     "installable": True,
     "application": False,
 }
