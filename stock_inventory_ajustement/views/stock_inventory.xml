@@ -14,14 +14,14 @@
                         class="oe_highlight"
                         attrs="{'invisible':[('state', 'in', ['draft','in_progress','done','cancel'])]}"
                         string="Begin Adjustments"
-                        groups="purchase_request.group_purchase_request_cdg,base.group_system"
+                        groups="stock.group_stock_manager,base.group_system"
                     />
                     <button
                         type="object"
                         name="action_state_to_draft"
                         attrs="{'invisible':['|',('state', 'in', ['draft', 'done']), ('count_stock_moves', '!=', 0)]}"
                         string="Back to Draft"
-                        groups="purchase_request.group_purchase_request_cdg,base.group_system"
+                        groups="stock.group_stock_manager,base.group_system"
                     />
                     <field name="action_state_to_cancel_allowed" invisible="1" />
                     <button
@@ -29,7 +29,7 @@
                         name="action_state_to_cancel"
                         attrs="{'invisible':[('action_state_to_cancel_allowed', '=', False),]}"
                         string="Cancel"
-                        groups="purchase_request.group_purchase_request_cdg,base.group_system"
+                        groups="stock.group_stock_manager,base.group_system"
                     />
                     <button
                         type="object"
@@ -37,7 +37,7 @@
                         class="oe_highlight"
                         attrs="{'invisible':[('state', 'in', ['draft','validation1','done','cancel'])]}"
                         string="Set to Done"
-                        groups="purchase_request.group_purchase_request_cdg,base.group_system"
+                        groups="stock.group_stock_manager,base.group_system"
                     />
                     <field
                         name="state"
