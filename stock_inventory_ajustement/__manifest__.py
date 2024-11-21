@@ -1,6 +1,6 @@
 {
     "name": "Stock Inventory Adjustment",
-    "version": "15.0.0.0.0",
+    "version": "1.0.0.0.0",
     "license": "LGPL-3",
     "category": "Inventory/Inventory",
     "summary": "Allows to do an easier follow up of the Inventory Adjustments",
