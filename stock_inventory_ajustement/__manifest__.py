@@ -7,7 +7,7 @@
     "name": "Stock Inventory Adjustment",
     "version": "17.0.0.0.0",
     "license": "LGPL-3",
-    "category": "Forpak",
+    "category": "Inventory",
     "summary": "Allows to do an easier follow up of the Inventory Adjustments",
     "author": "feddad.imad@gmail.com",
     "website": "",
