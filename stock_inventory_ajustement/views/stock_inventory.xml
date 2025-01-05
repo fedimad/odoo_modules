@@ -1,8 +1,8 @@
 <odoo>
 
     <record id="view_inventory_group_form" model="ir.ui.view">
-        <field name="name">x_stock.inventory.form.view</field>
-        <field name="model">x_stock.inventory</field>
+        <field name="name">stock.inventory.form.view</field>
+        <field name="model">stock.inventory</field>
         <field name="priority">1000</field>
         <field name="arch" type="xml">
             <form>
@@ -171,8 +171,8 @@
     </record>
 
     <record id="view_inventory_group_tree" model="ir.ui.view">
-        <field name="name">x_stock.inventory.tree.view</field>
-        <field name="model">x_stock.inventory</field>
+        <field name="name">stock.inventory.tree.view</field>
+        <field name="model">stock.inventory</field>
         <field name="priority">1000</field>
         <field name="arch" type="xml">
             <tree>
@@ -194,7 +194,7 @@
     </record>
 
     <record model="ir.ui.view" id="stock_inventory_search_view">
-        <field name="model">x_stock.inventory</field>
+        <field name="model">stock.inventory</field>
         <field name="arch" type="xml">
             <search>
                 <field name="name" />
@@ -212,7 +212,7 @@
 
     <record id="action_view_inventory_group_form" model="ir.actions.act_window">
         <field name="name">Inventory Adjustment Group</field>
-        <field name="res_model">x_stock.inventory</field>
+        <field name="res_model">stock.inventory</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="view_inventory_group_tree" />
     </record>

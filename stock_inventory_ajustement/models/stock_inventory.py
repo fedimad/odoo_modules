@@ -18,7 +18,7 @@ READONLY_STATES = {
 
 
 class InventoryAdjustmentsGroup(models.Model):
-    _name = "x_stock.inventory"
+    _name = "stock.inventory"
     _description = "Inventory Adjustment Group"
     _order = "date desc, id desc"
     _inherit = [
@@ -170,7 +170,7 @@ class InventoryAdjustmentsGroup(models.Model):
     )
 
     line_ids = fields.One2many(
-        'x_stock.inventory.line', 'inventory_id', string="Ligne d'inventaire",
+        'stock.inventory.line', 'inventory_id', string="Ligne d'inventaire",
         copy=False, readonly=False,
         states={'done': [('readonly', True)],'in_progress': [('readonly', True)]})
 
@@ -366,7 +366,7 @@ class InventoryAdjustmentsGroup(models.Model):
 
         quants = self.env["stock.quant"].search(search_filter)
         if quants:
-            inventory_ids = self.env["x_stock.inventory"].search(
+            inventory_ids = self.env["stock.inventory"].search(
                 [("stock_quant_ids", "in", quants.ids), ("state", "=", "in_progress")]
             )
             if inventory_ids:
@@ -611,7 +611,7 @@ class InventoryAdjustmentsGroup(models.Model):
                 'date': fields.Datetime.now()
             }
             if not inventory.line_ids and not inventory.start_empty:
-                self.env['x_stock.inventory.line'].create(inventory._get_inventory_lines_values())
+                self.env['stock.inventory.line'].create(inventory._get_inventory_lines_values())
             inventory.write(vals)
 
     def _get_inventory_lines_values(self):
@@ -678,7 +678,7 @@ class InventoryAdjustmentsGroup(models.Model):
 
 
 class InventoryAdjustmentsLine(models.Model):
-    _name = "x_stock.inventory.line"
+    _name = "stock.inventory.line"
     _description = "Inventory Line"
     _order = "product_id, inventory_id, location_id, prod_lot_id"
     _inherit = ["mail.thread"]
@@ -686,16 +686,16 @@ class InventoryAdjustmentsLine(models.Model):
 
     @api.model
     def _domain_location_id(self):
-        if self.env.context.get('active_model') == 'x_stock.inventory':
-            inventory = self.env['x_stock.inventory'].browse(self.env.context.get('active_id'))
+        if self.env.context.get('active_model') == 'stock.inventory':
+            inventory = self.env['stock.inventory'].browse(self.env.context.get('active_id'))
             if inventory.exists() and inventory.location_ids:
                 return "[('company_id', '=', company_id), ('usage', 'in', ['internal', 'transit']), ('id', 'child_of', %s)]" % inventory.location_ids.ids
         return "[('company_id', '=', company_id), ('usage', 'in', ['internal', 'transit'])]"
 
     @api.model
     def _domain_product_id(self):
-        if self.env.context.get('active_model') == 'x_stock.inventory':
-            inventory = self.env['x_stock.inventory'].browse(self.env.context.get('active_id'))
+        if self.env.context.get('active_model') == 'stock.inventory':
+            inventory = self.env['stock.inventory'].browse(self.env.context.get('active_id'))
             if inventory.exists() and len(inventory.product_ids) > 1:
                 return "[('type', '=', 'product'), '|', ('company_id', '=', False), ('company_id', '=', company_id), ('id', 'in', %s)]" % inventory.product_ids.ids
         return "[('type', '=', 'product'), '|', ('company_id', '=', False), ('company_id', '=', company_id)]"
@@ -703,7 +703,7 @@ class InventoryAdjustmentsLine(models.Model):
 
 
 
-    inventory_id = fields.Many2one('x_stock.inventory', 'Inventaire', ondelete='cascade')
+    inventory_id = fields.Many2one('stock.inventory', 'Inventaire', ondelete='cascade')
 
     line_date = fields.Datetime(
         related="inventory_id.date",
