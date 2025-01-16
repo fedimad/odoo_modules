@@ -9,9 +9,6 @@ from math import ceil
 from odoo import fields, models, api,_
 import odoo.addons.decimal_precision as dp
 from odoo.exceptions import ValidationError,UserError
-import json
-from odoo.tools.misc import formatLang, format_date, get_lang
-
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -43,22 +40,12 @@ class PurchaseOrderr(models.Model):
             'payment_type': self.payment_term_id and self.payment_term_id.payment_type or False,
         }
         self.update(values)
-        self._amount_all()
 
     payment_type = fields.Char('Type de paiement')
     timbre = fields.Monetary(string='Timbre', store=True, readonly=True,
                              compute='_amount_timbre', track_visibility='onchange')
     amount_timbre = fields.Monetary(string='Total avec Timbre', store=True,
                                     readonly=True, compute='_amount_timbre', track_visibility='onchange')
-
-
-    def _compute_tax_totals_json(self):
-        super(PurchaseOrderr, self)._compute_tax_totals_json()
-        for rec in self:
-            tax_totals_json_dict = json.loads(rec.tax_totals_json)
-            tax_totals_json_dict.update(
-                {'timbre': rec.timbre, })
-            rec.tax_totals_json = json.dumps(tax_totals_json_dict)
 
 
 
@@ -107,7 +94,6 @@ class SaleOrder(models.Model):
         """
         Compute the total amounts of the SO.
         """
-        lang_env = self.with_context(lang=self.partner_id.lang).env
         for order in self:
             amount_untaxed = amount_tax = amount_discount = 0.0
             for line in order.order_line:
@@ -140,19 +126,21 @@ class SaleOrder(models.Model):
     def supply_rate(self):
 
         for order in self:
-            if order.discount_type == 'percent' :
-                for line in order.order_line:
-                    line.discount = order.discount_rate
-            else:
+            if order.discount_type == 'percent' and order.discount_rate > 0:
+                discount = order.discount_rate
+            elif order.discount_type == 'amount' and order.discount_rate > 0:
                 total = discount = 0.0
                 for line in order.order_line:
                     total += round((line.product_uom_qty * line.price_unit))
                 if order.discount_rate != 0:
                     discount = (order.discount_rate / total) * 100
                 else:
-                    discount = order.discount_rate
-                # for line in order.order_line:
-                #     line.discount = discount
+                    discount = 0
+            else:
+                discount = 0
+            for line in order.order_line:
+                line.discount = discount
+
 
 
     def _prepare_invoice(self, ):
@@ -167,15 +155,6 @@ class SaleOrder(models.Model):
 
         self.supply_rate()
         return True
-
-
-    def _compute_tax_totals_json(self):
-        super(SaleOrder, self)._compute_tax_totals_json()
-        for rec in self:
-            tax_totals_json_dict = json.loads(rec.tax_totals_json)
-            tax_totals_json_dict.update(
-                {'timbre': rec.timbre, })
-            rec.tax_totals_json = json.dumps(tax_totals_json_dict)
 
 
 class SaleOrderLine(models.Model):
@@ -197,6 +176,7 @@ class AccountMove(models.Model):
 
 
     @api.depends(
+        'invoice_line_ids.price_subtotal',
         'line_ids.matched_debit_ids.debit_move_id.move_id.payment_id.is_matched',
         'line_ids.matched_debit_ids.debit_move_id.move_id.line_ids.amount_residual',
         'line_ids.matched_debit_ids.debit_move_id.move_id.line_ids.amount_residual_currency',
@@ -285,15 +265,18 @@ class AccountMove(models.Model):
                 somme1 += (line.price_unit * line.quantity *line.discount )
                 if line.product_id.type == 'product':
                         total_piece1 += line.price_subtotal
-                        move.total_pieces_ht = total_piece1
+                        
                 elif  line.product_id.type == 'service':
                     total_service += line.price_subtotal
-                    move.total_services_ht = total_service
-
+                    
+            _logger.warning('\n\n_compute_amount ***********************total_service= %s \n' %total_service)
+            _logger.warning('\n\n_compute_amount ***********************total_piece1 = %s \n' %total_piece1)
             # raise ValidationError(total_currency )
             move.amount_untaxed = sign * (total_untaxed_currency if len(currencies) == 1 else total_untaxed)
             move.amount_tax = sign * (total_tax_currency if len(currencies) == 1 else total_tax)
             move.amount_total = sign * (total_currency if len(currencies) == 1 else total)
+            move.total_services_ht = total_service
+            move.total_pieces_ht = total_piece1
             move.amount_residual = -sign * (total_residual_currency if len(currencies) == 1 else total_residual)
             move.amount_untaxed_signed = -total_untaxed
             move.amount_tax_signed = -total_tax
@@ -500,7 +483,7 @@ class AccountMove(models.Model):
             :param to_compute:              The list returned by '_compute_payment_terms'.
             '''
             # As we try to update existing lines, sort them by due date.
-            _logger.warning('_compute_diff_payment_terms_linesd***********************if0 %s' %existing_terms_lines)
+            
             existing_terms_lines = existing_terms_lines.sorted(lambda line: line.date_maturity or today)
             existing_terms_lines_index = 0
 
@@ -639,14 +622,6 @@ class AccountMove(models.Model):
             self.payment_reference = new_terms_lines[-1].name or ''
             self.invoice_date_due = new_terms_lines[-1].date_maturity
 
-
-    def _compute_tax_totals_json(self):
-        super(AccountMove, self)._compute_tax_totals_json()
-        for rec in self:
-            tax_totals_json_dict = json.loads(rec.tax_totals_json)
-            tax_totals_json_dict.update(
-                {'timbre': rec.timbre, })
-            rec.tax_totals_json = json.dumps(tax_totals_json_dict)
 
 
 

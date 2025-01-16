@@ -5,7 +5,7 @@
 
 {
     'name': 'Algérie - Timbre Fiscal avec écriture comptable',
-    'version': '15.0.1.1',
+    'version': '22.1',
     'category': 'Accounting',
     'description': """
 This is the module to manage the Fiscal Timbre in Odoo.
@@ -14,9 +14,9 @@ This is the module to manage the Fiscal Timbre in Odoo.
 
 .
 
-**Email:** feddad.imad@gmail.com
+**Email:** imad.feddad@gmail.com
 """,
-    'author': 'feddad.imad@gmail.com, Prodigital',
+    'author': 'imad.feddad@hotmail.fr, Prodigital',
     'website': 'https://prodigital.dz/',
     'depends': ['sale','account','purchase', 'base'],
     'data': [
@@ -31,11 +31,7 @@ This is the module to manage the Fiscal Timbre in Odoo.
     ],
 
     'images': ['static/description/banner.jpg'],
-    'assets': {
-        'web.assets_qweb': [
-            'l10_dz_timbre/static/src/xml/**/*',
-        ],
-    },
+
     'installable': True,
     'application': False,
     'auto_install': False,

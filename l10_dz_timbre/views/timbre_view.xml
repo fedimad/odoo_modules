@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>	
+<odoo>  
     <data>
-	<!--Timbre: Form-->
-	<record id="config_timbre_form" model="ir.ui.view" >
+    <!--Timbre: Form-->
+    <record id="config_timbre_form" model="ir.ui.view" >
           <field name="name">config.timbre.form</field>
           <field name="model">config.timbre</field>
           <field name="arch" type="xml">
@@ -15,11 +15,25 @@
                 </div>
 
             <group>
-                <group string="Valeur/Tranche">	
-                   <field name="valeur"/>
-                   <field name="tranche"/>
+                <group string="Valeur/Tranche"> 
+                        <span style="font-weight:bold;">Valeur du timbre (300-30 000)</span>
+                    <div>
+                       <field name="valeur" class="oe_inline"  nolabel="1"/>
+                   </div>
+                        <span style="font-weight:bold;">Valeur du timbre (30 000-100 000)</span>
+                   <div>
+                       <field name="valeur_30000_100000" class="oe_inline"  nolabel="1"/>
+                   </div>
+                        <span style="font-weight:bold;">Valeur du timbre (> 100 000)</span>
+                   <div>
+                       <field name="valeur_sup_100000" class="oe_inline"  nolabel="1"/>
+                   </div>
+                        <span style="font-weight:bold;">Tranche</span>
+                   <div>
+                       <field name="tranche" class="oe_inline"  nolabel="1"/>
+                   </div>
                 </group>
-                <group string="Valeur Min/Max">	
+                <group string="Valeur Min/Max"> 
                    <field name="min_value"/>
                    <field name="max_value"/>
                 </group>
@@ -39,14 +53,14 @@
             </field>
         </record>
 
-	<!--Timbre: Tree-->
-	<record id="config_timbre_tree" model="ir.ui.view" >
+    <!--Timbre: Tree-->
+    <record id="config_timbre_tree" model="ir.ui.view" >
           <field name="name">config.timbre.tree</field>
           <field name="model">config.timbre</field>
           <field name="arch" type="xml">
             <tree string="Configuration Timbre">
                 <field name="name"/>
-	            <field name="valeur"/>
+                <field name="valeur"/>
                 <field name="tranche"/>
                 <field name="min_value"/>
                 <field name="max_value"/>
@@ -55,7 +69,7 @@
          </field>
         </record>
 
-	<record id="action_timbre" model="ir.actions.act_window">
+    <record id="action_timbre" model="ir.actions.act_window">
             <field name="name">Configuration Timbre</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">config.timbre</field>
