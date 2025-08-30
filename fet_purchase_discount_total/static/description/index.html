@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo App 3 Index</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<section>
+    <div class="container"
+         style="font-family: 'Inter', sans-serif !important;background-color: #fff !important;">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-between flex-wrap align-items-sm-center"
+                 style="border-bottom:1px solid rgba(0, 0, 0, 0.22)">
+                <div class="my-3">
+                    <img src="assets/misc/logo_fet.png"
+                         style="width:auto !important; height:40px !important">
+                </div>
+                <div class="my-3 d-flex align-items-center">
+                    <div class="text-center"
+                         style="background-color:#017E84 !important;font-size: 0.8rem !important; color:#fff !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important; min-width: 120px !important;">
+                        Community
+                    </div>
+                    <div class="text-center"
+                         style="background-color:#875A7B !important; color:#fff !important;font-size: 0.8rem !important; font-weight:500 !important; padding:4px !important; margin:0 3px !important; border-radius:50px !important;min-width: 120px !important;">
+                        Enterprise
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center d-flex align-items-center flex-column"
+                 style="margin: 80px 0px !important;">
+                <h1 style="font-size: 2.8rem;font-weight: 700; color:
+                    #1A202C;">
+                    Purchase Discount on Total Amount</h1>
+                <p class="my-3 mb-4"
+                   style="max-width: 80%; font-weight: 400 !important; line-height: 32px; color: #718096;">
+                    This module allows you to mention discount on total of purchase
+                    order and
+                    supplier invoice as percentage or as amount.
+                </p>
+                <!-- <div style="width: 80%; margin-top: 3rem;">
+                    <img src="assets/screenshots/hero.gif"
+                         class="img-responsive" width="100%" height="auto">
+                </div> -->
+            </div>
+        </div>
+        <div class="container mt-5 mb-5">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center mt-4">
+                <p class="m-0"
+                   style="font-weight: 600; font-size: 24px; color:#714b67 !important">
+                    Key Highlights
+                </p>
+            </div>
+            <div class="row py-4">
+                <div class="col-md-6 col-sm-12 p-3">
+                    <div class="d-flex   h-100" style="padding: 30px;border-radius: 12px;
+                                    background: #FFF;
+                                    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25); ">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: #714B67;
+                                    display: flex; justify-content: center; align-items: center;
+                                    margin-right: 10px; flex-shrink: 0;">
+                            <i class="fa-solid fa-star  "
+                               style="color: #fff;font-size:14px;"></i>
+                        </div>
+                        <div>
+                            <p style="color: #1A202C;font-weight: 600;
+                                      font-size: 1.2rem; margin-bottom: 2px;">
+                                Global Discount In Purchase.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 p-3">
+                    <div class="d-flex   h-100" style="padding: 30px;border-radius: 12px;
+                                    background: #FFF;
+                                    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.25); ">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: #714B67;
+                                    display: flex; justify-content: center; align-items: center;
+                                    margin-right: 10px; flex-shrink: 0;">
+                            <i class="fa-solid fa-star  "
+                               style="color: #fff;font-size:14px;"></i>
+                        </div>
+                        <div>
+                            <p style="color: #1A202C;font-weight: 600;
+                                      font-size: 1.2rem; margin-bottom: 2px;">
+                                Select Percentage or amount from Discount type
+                                and give discount percentage or amount as
+                                Discount rate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container rounded">
+            <!-- <ul class="nav nav-tabs d-flex"
+                style="width: fit-content;margin: 0 auto;gap: 1rem;">
+                <li class="col text-center py-2 text-nowrap "
+                    style="color: #fff; background-color: #714B67;border-radius: 6px 6px 0px 0px;">
+                    <a
+                            class="active show" data-toggle="tab" href="#tab1"
+                            style="color: #fff;font-weight: 500; background-color: #714B67; text-decoration: none;">
+                        <i class="fa-regular fa-image  pr-2"
+                           style="color: #fff;"></i>
+                        Screenshots</a></li>
+                <li class="col text-center py-2 text-nowrap "
+                    style="color: #fff; background-color: #714B67;border-radius: 6px 6px 0px 0px;">
+                    <a
+                            data-toggle="tab" href="#tab2"
+                            style="color: #fff;font-weight: 500;  text-decoration: none;"><i
+                            class="fa-solid fa-star  pr-2"
+                            style="color: #fff;"></i>Features</a></li>
+                <li class="col text-center py-2 text-nowrap "
+                    style="color: #fff; background-color: #714B67;border-radius: 6px 6px 0px 0px;">
+                    <a
+                            data-toggle="tab" href="#tab3"
+                            style="color: #fff;font-weight: 500; text-decoration: none; background-color: #714B67;"><i
+                            class="fa-solid fa-book-open  pr-2"
+                            style="color: #fff;"></i>Released Notes</a></li>
+            </ul> -->
+            <div class="tab-content"
+                 style="background-color: rgba(121, 113, 119, 0.04);">
+                <div id="tab1" class="tab-pane fade in active show">
+                    <div class="col-lg-12 py-2"
+                         style="padding: 1rem 4rem !important;">
+                        <div
+                                style="border: 1px solid #d8d6d6; border-radius: 4px; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                            
+                            <div class="px-3">
+                                <h4 class="mt-2"
+                                    style=" font-weight:600 !important; color:#282F33 !important; font-size:1.3rem !important">
+                                    <b>Purchase Order</b>
+                                </h4>
+                                <p style="font-weight: 400; font-family: 'Montserrat', sans-serif; font-size: 14px;">
+                                    Select Percentage or amount from Discount
+                                    type and give discount percentage or
+                                    amount as Discount rate.</p>
+                            </div>
+                            <div class="row justify-content-center p-3 w-100 m-0">
+                                <img src="assets/screenshots/1.png"
+                                     class="img-thumbnail" width="100%"
+                                     height="auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 py-2"
+                         style="padding: 1rem 4rem !important;">
+                        <div
+                                style="border: 1px solid #d8d6d6; border-radius: 4px;  background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                            <div class="px-3">
+                                <h4 class="mt-2"
+                                    style=" font-weight:600 !important; color:#282F33 !important; font-size:1.3rem !important">
+                                    Supplier Invoice</h4>
+                                <p style="font-weight: 400; font-family: 'Montserrat', sans-serif; font-size: 14px;">
+                                    Select Percentage or amount from Discount
+                                    type and give discount percentage or
+                                    amount as Discount rate.</p>
+                            </div>
+                            <div class="row justify-content-center p-3 w-100 m-0">
+                                <img src="assets/screenshots/4.png"
+                                     class="img-thumbnail" width="100%"
+                                     height="auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+       
+        <div class="container mt-5">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center mt-4">
+                <p class="m-0"
+                   style="font-weight: 600; font-size: 24px; color:#000 !important">
+                    Our Services</p>
+
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row py-3">
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center;  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative;border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#13EA36 ; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/cogs.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Customization</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative;border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#DBC711; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/wrench.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Implementation</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center;  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative; border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#FF6B6B ; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/lifebuoy.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Support</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative; border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#FFA801 ; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/user.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Hire
+                            Odoo Developer</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center;  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative; border-radius: 4px;">
+
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#54A0FF; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/puzzle.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Integration</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center;  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative;border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#6D7680 ; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/update.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Migration</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center;  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative;border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#786FA6 ; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/consultation.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Consultancy</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center; box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;position: relative;border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#F8A5C2 ; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/training.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Implementation</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 px-4 py-4">
+                    <div
+                            style="background-color: #fff; padding: 25px; text-align: center;  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; position: relative;border-radius: 4px;">
+                        <div style="position: absolute; top: 0%; left: 50%; transform: translate(-50%, -50%);">
+                            <div style="background-color:#E6BE26; border-radius: 50%; padding: 15px;    width: 68px;
+                                    height: 68px; display: inline-block; box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);">
+                                <img src="assets/icons/license.png"
+                                     alt="service-icon" width="38px"
+                                     height="auto">
+                            </div>
+                        </div>
+                        <p style="margin-top: 20px; font-weight: bold;">Odoo
+                            Licensing Consultancy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="container mt-5">
+            <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center mt-5">
+                <p class="m-0"
+                   style="font-weight: 600; font-size: 24px; color:#000 !important">
+                    Support</p>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="d-flex align-items-center justify-content-center p-4" style="background-color: #FFFAFE; border: 1px solid #D9D9D9; border-radius: 12px;">
+                <img src="assets/misc/support (1) 1.svg" alt="Support Icon" width="60" class="me-3">
+                <div>
+                    <h5 style="color: #714B67; font-size: 24px; font-weight: 600; margin-bottom: 0.5rem;">Need Help?</h5>
+                    <p class="m-0" style="color: #718096;">Got questions or need help? Get in touch.</p>
+                    <div style="font-weight: 400; margin-top: 0.5rem;">
+                        <img src="assets/misc/support-email.svg" alt="Email Icon" width="18" style="filter: invert(1); margin-right: 0.5rem;">
+                        feddad.imad@gmail.com
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
