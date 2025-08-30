@@ -23,7 +23,7 @@ from odoo import api, fields, models
 
 
 class PurchaseOrder(models.Model):
-    """Inherit 'sale.order' model and add fields needed"""
+    """Inherit 'purchase.order' model and add fields needed"""
     _inherit = "purchase.order"
 
     @api.depends('order_line.price_total')
