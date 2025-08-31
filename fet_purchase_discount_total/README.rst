@@ -4,7 +4,7 @@
 
 Purchase Discount on Total Amount
 =============================
-Discount on Total in Purchase and Invoice With Discount Limit and Approval
+Discount on Total in Purchase and Invoice
 
 Configuration
 =============
