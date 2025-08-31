@@ -2,9 +2,9 @@
     :target: https://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 
-Sale Discount on Total Amount
+Purchase Discount on Total Amount
 =============================
-Discount on Total in Sale and Invoice With Discount Limit and Approval
+Discount on Total in Purchase and Invoice With Discount Limit and Approval
 
 Configuration
 =============
@@ -12,7 +12,7 @@ Configuration
 
 Company
 -------
-* `Cybrosys Techno Solutions <https://cybrosys.com/>`__
+
 
 License
 -------
@@ -22,17 +22,13 @@ GNU Affero General Public License v3.0 (AGPL v3)
 Credits
 -------
 * Developer:
-            Faslu Rahman,
-            (V14) Muhammed P,
-            (V15) Sreerag E,
-            (V16) Sahla Sherin,
-            (V17) Jumana Haseen,
-  Contact : odoo@cybrosys.com
+            feddad imad,
+  Contact : feddad.imad@gmail.com
 
 Contacts
 --------
-* Mail Contact : odoo@cybrosys.com
-* Website : https://cybrosys.com
+* Mail Contact : feddad.imad@gmail.com
+* Website : feddad.imad@gmail.com
 
 Bug Tracker
 -----------
@@ -41,12 +37,11 @@ your issue has already been reported.
 
 Maintainer
 ==========
-.. image:: https://cybrosys.com/images/logo.png
-   :target: https://cybrosys.com
+feddad.imad@gmail.com
 
-This module is maintained by Cybrosys Technologies.
+This module is maintained by Feddad Imad.
 
-For support and more information, please visit `Our Website <https://cybrosys.com/>`__
+For support and more information, Contact us `On <feddad.imad@gmail.com>`__
 
 Further information
 ===================
