@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+
+        <t t-name="stock_barcode_signature.CustomMainComponent" t-inherit="stock_barcode.MainComponent" t-inherit-mode="extension" t-translation="off">
+            <xpath expr="//div[@t-if='displayActionButtons' and contains(@class,'o_barcode_control')]" position="inside">
+                    <button type="button" class="o_barcode_signature_button btn btn-primary"
+                            t-on-click="onClickSignature">
+                        <i class="fa fa-pencil-square-o me-1"/> sign
+                    </button>
+
+            </xpath>
+        </t>
+
+</templates>
