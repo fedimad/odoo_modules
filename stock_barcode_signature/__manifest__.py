@@ -44,7 +44,7 @@ Required modules:
         ],
     },
     'qweb': [],
-    'images': ['static/description/banner.jpg'],
+    'images': ['static/description/banner.png'],
     'installable': True,
     'application': True,
 }
