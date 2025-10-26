@@ -15,7 +15,7 @@ _logger = logging.getLogger(__name__)
 
 
 
-class SaleOrder(models.Model):
+class StockPicking(models.Model):
     _inherit = "stock.picking"
 
 
