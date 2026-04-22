@@ -1,0 +1,28 @@
+<!-- views/after_login.js -->
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="after_login_script" inherit_id="web.webclient_bootstrap" name="After Login Script">
+        <xpath expr="//script[@id='web-client-bootstrap']" position="after">
+            <script type="text/javascript">
+                odoo.define('fet_user_login_detail.after_login', function (require) {
+                    "use strict";
+                    
+                    var session = require('web.session');
+                    
+                    if (session.is_authenticated()) {
+                        // User is already logged in
+                        $.ajax({
+                            url: '/web/session/after_login',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {},
+                            success: function(data) {
+                                console.log('Session tracked:', data);
+                            }
+                        });
+                    }
+                });
+            </script>
+        </xpath>
+    </template>
+</odoo>
