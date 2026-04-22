@@ -4,15 +4,12 @@
 
 User Log Details
 ================
-Record Login user details & IP Address.
+Record Login user details, Browser, Device & IP Address.
 
 Configuration
 =============
-* No additional configurations needed.
+* pip install user_agents.
 
-Company
--------
-* `Cybrosys Techno Solutions <https://cybrosys.com/>`__
 
 License
 -------
@@ -21,33 +18,19 @@ Affero General Public License, v3.0 (AGPL v3).
 
 Credits
 -------
-* Developers: (V10) Saritha,
-              (V11) Saritha,
-              (V12) Saritha,
-              (V13) Saritha,
-              (V14) Muhammad P,
-              (V15) Noorjahan P,
-              (V16) Sabeel B,
-              (V17) Aysha Shalin,
-  Contact: odoo@cybrosys.com
+* Developers: (V17) Deddad Imad,
+  Contact: feddad.imad@gmail.com
 
 Contacts
 --------
-* Mail Contact : odoo@cybrosys.com
-* Website : https://cybrosys.com
+* Mail Contact : feddad.imad@gmail.com
 
 Bug Tracker
 -----------
 Bugs are tracked on GitHub Issues. In case of trouble, please check there if your issue has already been reported.
 
-Maintainer
-==========
-.. image:: https://cybrosys.com/images/logo.png
-   :target: https://cybrosys.com
 
-This module is maintained by Cybrosys Technologies.
-
-For support and more information, please visit `Our Website <https://cybrosys.com/>`__
+For support and more information, please visit contact us feddad.imad@gmail.com
 
 Further information
 ===================
