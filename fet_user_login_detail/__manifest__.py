@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #############################################################################
 {
-    'name': 'User Log Details | Sessions Management | Track Logins | End Sessions | Audi login',
+    'name': 'User Log Details | Sessions Management | Track Logins | End Sessions | Audit login',
     'version': '17.0.1.0.0',
     'category': 'System',
     'summary': 'Login user details.',
