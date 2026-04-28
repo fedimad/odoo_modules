@@ -73,6 +73,7 @@ class LoginDetail(models.Model):
 
         for record in self:
             record.is_session_active = False
+            record.active = False
 
             if not record.session_id:
                 continue
@@ -86,6 +87,7 @@ class LoginDetail(models.Model):
                 last_activity = stat.st_mtime
                 if now - last_activity < 300:  # 5 minutes
                     record.is_session_active = True
+                    record.active = True
             except:
                 pass
 
