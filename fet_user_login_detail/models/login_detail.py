@@ -39,6 +39,8 @@ class LoginDetail(models.Model):
     is_session_active = fields.Boolean(string="Session Active", compute="_compute_session_info", store=False)
     active = fields.Boolean(string="Active", default=True)
 
+
+
     def _get_session_directory(self):
         """Get the session directory path"""
         possible_paths = [
@@ -85,7 +87,7 @@ class LoginDetail(models.Model):
             try:
                 stat = os.stat(session_file)
                 last_activity = stat.st_mtime
-                if now - last_activity < 300:  # 5 minutes
+                if now - last_activity < 7200:  # 5 minutes
                     record.is_session_active = True
                     record.active = True
             except:
