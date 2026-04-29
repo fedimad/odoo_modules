@@ -149,19 +149,11 @@ class LoginTracker(Home):
             except Exception as e:
                 _logger.error(f"\n\nError parsing user agent: {e}\n\n")
 
-            # Try direct method first (much faster and more reliable)
-            session_id = get_session_id_from_request()
-            session_file = get_session_file_path(session_id) if session_id else None
-            # Fallback to scanning if direct method failed
-            if not session_file:
-                session_id = find_real_session_file(user.id)
-            else:
-                session_id = session_id  # Use the normalized ID
 
             # Check if we already have a record for this session to avoid duplicates
             existing_record = request.env['login.detail'].sudo().search([
                 ('user_id', '=', user.id),
-                ('session_id', '=', session_id ),
+                ('session_id', '=', request.session.sid ),
                 ('status', '=', 'success'),
                 ('create_date', '>=', datetime.now().replace(hour=0, minute=0, second=0))
             ], limit=1)
@@ -232,7 +224,7 @@ class LogoutTracker(Session):
                         'status': 'logout',
                         'logout_date': datetime.now(),
                         'is_session_active': False,
-                        # 'active': True,
+                        'active': False,
                     })
 
 
