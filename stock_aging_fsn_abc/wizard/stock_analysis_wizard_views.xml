@@ -86,7 +86,7 @@
 
     <menuitem id="menu_stock_analysis_root" name="Aging &amp; Analysis"
               parent="stock.menu_warehouse_report" sequence="60"
-              groups="base.group_system,stock.group_stock_user"/>
+              groups="base.group_system"/>
     <menuitem id="menu_stock_aging" name="Inventory Aging" parent="menu_stock_analysis_root"
               action="action_stock_aging_wizard" sequence="10"/>
     <menuitem id="menu_stock_fsn" name="FSN Analysis" parent="menu_stock_analysis_root"

@@ -600,8 +600,8 @@ class StockAnalysisWizard(models.TransientModel):
         report = None
         if self.output_format == 'xlsx' or flag:
             report = self._prepare_report()
-        if flag:
-            self._flag_obsolete(report['obsolete_template_ids'])
+        # if flag:
+        #     self._flag_obsolete(report['obsolete_template_ids'])
         if self.output_format == 'xlsx':
             return self._download_xlsx(report)
         return self.env.ref('stock_aging_fsn_abc.action_report_stock_analysis').report_action(self)

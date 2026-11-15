@@ -26,54 +26,140 @@
     <template id="report_stock_analysis">
         <t t-call="web.html_container">
             <t t-call="web.internal_layout">
-                <div class="page" style="font-size: 10px;">
-                    <h4 t-esc="report['title']"/>
-                    <p class="text-muted" t-esc="report['subtitle']"/>
+                <style>
+                    .sa { font-size: 10.5px; color: #2a1626; }
+                    .sa table { border-collapse: separate; border-spacing: 0; }
+                    .sa_head { width: 100%; margin-bottom: 10px; }
+                    .sa_title { font-size: 22px; font-weight: bold; margin: 0; color: #2a1626; }
+                    .sa_sub { font-size: 10px; color: #8a7684; margin-top: 4px; }
+                    .sa_chip { display: inline-block; padding: 3px 12px; border-radius: 12px; -webkit-border-radius: 12px;
+                               background: #efe3ec; color: #714B67; font-size: 9px; font-weight: bold; letter-spacing: 1px; }
+                    .sa_bar { height: 4px; background: #714B67; margin-bottom: 14px; }
+                    .sa_panel { width: 100%; background: #f8f3f7; border: 1px solid #efe3ec; border-radius: 10px;
+                                -webkit-border-radius: 10px; margin-bottom: 14px; }
+                    .sa_panel td { padding: 10px 16px; vertical-align: middle; }
+                    .sa_rule { font-size: 10.5px; line-height: 1.6; color: #5b4655; border-left: 1px solid #e7d9e3; padding-left: 20px !important; }
+                    .sa_leg_row { margin: 6px 0; font-size: 11px; font-weight: bold; }
+                    .sa_sq { display: inline-block; width: 10px; height: 10px; border-radius: 3px; -webkit-border-radius: 3px; margin-right: 6px; }
+                    .sa_legend { margin-bottom: 8px; font-size: 9.5px; color: #6b5a66; }
+                    .sa_dot { display: inline-block; width: 8px; height: 8px; border-radius: 4px; -webkit-border-radius: 4px; margin: 0 4px 0 12px; }
+                    .sa_table { width: 100%; font-size: 10.5px; }
+                    .sa_table th { background: #714B67; color: #ffffff; font-size: 9.5px; font-weight: bold; padding: 7px 8px; white-space: nowrap; }
+                    .sa_table th.sa_first { border-radius: 8px 0 0 0; -webkit-border-radius: 8px 0 0 0; }
+                    .sa_table th.sa_last { border-radius: 0 8px 0 0; -webkit-border-radius: 0 8px 0 0; }
+                    .sa_table td { padding: 6px 8px; border-bottom: 1px solid #f0e8ee; }
+                    .sa_table tr.sa_alt td { background-color: #fcf9fb; }
+                    .sa_table tr.sa_tot td { background-color: #f4ecf1; font-weight: bold; border-top: 2px solid #714B67; border-bottom: 0; }
+                    .sa_table thead { display: table-header-group; }
+                    .sa_table tr { page-break-inside: avoid; }
+                    .sa_l { text-align: left; } .sa_r { text-align: right; } .sa_c { text-align: center; }
+                    .sa_v { font-size: 8.5px; font-weight: normal; color: #6b5a66; margin-top: 1px; }
+                    .sa_pill { display: inline-block; padding: 2px 10px; border-radius: 10px; -webkit-border-radius: 10px; font-size: 9px; font-weight: bold; }
+                    .sa_lossbar { display: inline-block; height: 7px; border-radius: 4px; -webkit-border-radius: 4px; margin-right: 8px;
+                                  background-color: #ff8a5c; background-image: -webkit-linear-gradient(left, #ffc94d, #ff5d73); }
+                    .sa_kpis { width: 100%; margin-top: 16px; table-layout: fixed; }
+                    .sa_kpis td { padding: 0 10px 0 0; vertical-align: top; }
+                    .sa_kpis td.sa_lastkpi { padding-right: 0; }
+                    .sa_kpi { background: #f8f3f7; border: 1px solid #efe3ec; border-radius: 10px; -webkit-border-radius: 10px; padding: 10px 14px; height: 64px; overflow: hidden; }
+                    .sa_kpi small { display: block; font-size: 8.5px; font-weight: bold; letter-spacing: .6px; text-transform: uppercase; color: #8a7684; margin-bottom: 4px; }
+                    .sa_kpi b { font-size: 15px; }
+                    .sa_note { margin-top: 8px; font-size: 9px; color: #8a7684; }
+                </style>
+                <div class="page sa">
+                    <table class="sa_head">
+                        <tr>
+                            <td>
+                                <h1 class="sa_title"><t t-esc="pdf['title']"/></h1>
+                                <div class="sa_sub"><t t-esc="pdf['subtitle']"/></div>
+                            </td>
+                            <td style="text-align: right; vertical-align: top; width: 120px;">
+                                <span class="sa_chip"><t t-esc="pdf['chip']"/></span>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="sa_bar"/>
 
-                    <t t-if="report['rows']">
-                        <table class="table table-sm table-bordered">
+                    <t t-if="pdf['rows']">
+                        <table t-if="pdf['donut']" class="sa_panel">
+                            <tr>
+                                <td style="width: 150px;"><t t-out="pdf['donut']"/></td>
+                                <td style="width: 250px;">
+                                    <t t-foreach="pdf['legend']" t-as="leg">
+                                        <div class="sa_leg_row">
+                                            <span class="sa_sq" t-attf-style="background-color: {{ leg['color'] }};"/>
+                                            <t t-esc="leg['label']"/>
+                                            <b style="float: right;"><t t-esc="leg['count']"/></b>
+                                        </div>
+                                    </t>
+                                </td>
+                                <td class="sa_rule"><t t-esc="pdf['rule']"/></td>
+                            </tr>
+                        </table>
+                        <div t-if="pdf['pareto']" class="sa_panel" style="padding: 12px 16px;">
+                            <div t-attf-style="position: relative; width: 100%; height: 0; padding-bottom: {{ pdf['pareto_ratio'] }};">
+                                <t t-out="pdf['pareto']"/>
+                            </div>
+                        </div>
+                        <div t-if="pdf['legend_heat']" class="sa_legend">
+                            <t t-foreach="pdf['legend_heat']" t-as="heat">
+                                <span class="sa_dot" t-attf-style="background-color: {{ heat['color'] }};"/><t t-esc="heat['label']"/>
+                            </t>
+                        </div>
+
+                        <table class="sa_table">
                             <thead>
                                 <tr>
-                                    <t t-foreach="report['columns']" t-as="col">
-                                        <th t-attf-class="{{ 'text-start' if col['type'] == 'text' else 'text-end' }}">
+                                    <t t-foreach="pdf['columns']" t-as="col">
+                                        <th t-attf-class="sa_{{ col['align'] }} {{ 'sa_first' if col_first else '' }} {{ 'sa_last' if col_last else '' }}">
                                             <t t-esc="col['label']"/>
                                         </th>
                                     </t>
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="report['rows']" t-as="row">
-                                    <tr>
-                                        <t t-foreach="range(len(row))" t-as="i">
-                                            <td t-attf-class="{{ 'text-start' if report['columns'][i]['type'] == 'text' else 'text-end' }}">
-                                                <t t-esc="fmt(row[i], report['columns'][i]['type'])"/>
+                                <t t-foreach="pdf['rows']" t-as="row">
+                                    <tr t-attf-class="{{ 'sa_alt' if row_index % 2 else '' }}">
+                                        <t t-foreach="row" t-as="cell">
+                                            <td t-attf-class="sa_{{ cell['align'] }}" t-att-style="cell.get('style') or None">
+                                                <t t-if="cell.get('pill')">
+                                                    <span class="sa_pill" t-attf-style="background-color: {{ cell['pill'][1] }}; color: {{ cell['pill'][2] }};"><t t-esc="cell['pill'][0]"/></span>
+                                                </t>
+                                                <t t-elif="cell.get('bar') is not None">
+                                                    <span class="sa_lossbar" t-attf-style="width: {{ cell['bar'] }}px;"/><t t-esc="cell['t']"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <t t-esc="cell['t']"/>
+                                                    <div t-if="cell.get('sub')" class="sa_v"><t t-esc="cell['sub']"/></div>
+                                                </t>
                                             </td>
                                         </t>
                                     </tr>
                                 </t>
-                            </tbody>
-                            <tfoot t-if="report['totals']">
-                                <tr class="fw-bold">
-                                    <t t-foreach="range(len(report['totals']))" t-as="i">
-                                        <td t-attf-class="{{ 'text-start' if report['columns'][i]['type'] == 'text' else 'text-end' }}">
-                                            <t t-esc="fmt(report['totals'][i], report['columns'][i]['type'])"/>
+                                <tr t-if="pdf['total']" class="sa_tot">
+                                    <t t-foreach="pdf['total']" t-as="cell">
+                                        <td t-attf-class="sa_{{ cell['align'] }}">
+                                            <t t-esc="cell['t']"/>
+                                            <div t-if="cell.get('sub')" class="sa_v"><t t-esc="cell['sub']"/></div>
                                         </td>
                                     </t>
                                 </tr>
-                            </tfoot>
+                            </tbody>
                         </table>
+                        <div t-if="pdf['note']" class="sa_note"><t t-esc="pdf['note']"/></div>
                     </t>
                     <p t-else="" class="text-center">No data for the selected filters.</p>
 
-                    <table t-if="report['summary']" class="table table-sm" style="width: auto; margin-top: 15px;">
-                        <tbody>
-                            <t t-foreach="report['summary']" t-as="item">
-                                <tr>
-                                    <td class="fw-bold"><t t-esc="item[0]"/></td>
-                                    <td><t t-esc="item[1]"/></td>
-                                </tr>
+                    <table t-if="pdf['kpis']" class="sa_kpis">
+                        <tr>
+                            <t t-foreach="pdf['kpis']" t-as="kpi">
+                                <td t-attf-class="{{ 'sa_lastkpi' if kpi_last else '' }}">
+                                    <div class="sa_kpi">
+                                        <small><t t-esc="kpi['label']"/></small>
+                                        <b t-attf-style="color: {{ kpi['color'] }};"><t t-esc="kpi['value']"/></b>
+                                    </div>
+                                </td>
                             </t>
-                        </tbody>
+                        </tr>
                     </table>
                 </div>
             </t>

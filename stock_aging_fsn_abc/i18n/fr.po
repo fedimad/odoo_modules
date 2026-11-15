@@ -111,7 +111,9 @@ msgid "Product Categories"
 msgstr "Catégories de produits"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__product_ids
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_report.py:0
 msgid "Products"
 msgstr "Produits"
 
@@ -582,3 +584,28 @@ msgstr "Ancienneté & analyses"
 #: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.report_stock_analysis
 msgid "No data for the selected filters."
 msgstr "Aucune donnée pour les filtres sélectionnés."
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_report.py:0
+#, python-format
+msgid "%s d"
+msgstr "%s j"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_report.py:0
+msgid "Each age cell shows the quantity (top) and its value (bottom)."
+msgstr ""
+"Chaque cellule d'âge indique la quantité (en haut) et sa valeur (en bas)."
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_report.py:0
+#, python-format
+msgid ""
+"Turnover = quantity sold in the period / quantity on hand. No sales: Non-"
+"moving. Turnover at or above %(ratio)s: Fast. Otherwise: Slow."
+msgstr ""
+"Rotation = quantité vendue sur la période / quantité en stock. Aucune vente "
+": Immobile. Rotation supérieure ou égale à %(ratio)s : Rapide. Sinon : Lent."
