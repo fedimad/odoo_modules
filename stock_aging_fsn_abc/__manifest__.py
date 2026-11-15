@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Stock Aging, FSN & ABC Analysis',
-    'version': '17.0.1.0.0',
+    'version': '1.0.0',
     'category': 'EWE',
     'author': 'feddad.imad@gmail.com',
     'summary': 'Inventory aging (FIFO buckets), FSN, ABC and inventory loss reports in PDF and XLSX',
