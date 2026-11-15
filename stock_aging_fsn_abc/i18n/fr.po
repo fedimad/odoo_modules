@@ -1,0 +1,584 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_aging_fsn_abc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_product_template__is_obsolete
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_product_product__is_obsolete
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.product_template_search_view_obsolete
+msgid "Obsolete"
+msgstr "Obsolète"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,help:stock_aging_fsn_abc.field_product_template__is_obsolete
+#: model:ir.model.fields,help:stock_aging_fsn_abc.field_product_product__is_obsolete
+msgid ""
+"Set by the Inventory Aging report when the whole remaining stock of the "
+"product sits in the oldest age bucket. It never archives or deletes the "
+"product: you decide what to do with it."
+msgstr ""
+"Renseigné par le rapport d'ancienneté du stock lorsque tout le stock restant"
+" du produit se trouve dans la tranche d'âge la plus ancienne. Le produit "
+"n'est jamais archivé ni supprimé : c'est à vous de décider quoi en faire."
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model,name:stock_aging_fsn_abc.model_stock_analysis_wizard
+msgid "Stock Aging / FSN / ABC / Loss Analysis"
+msgstr "Analyse ancienneté / FSN / ABC / pertes du stock"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__report_type
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+msgid "Report"
+msgstr "Rapport"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields.selection,name:stock_aging_fsn_abc.selection__stock_analysis_wizard__report_type__aging
+#: model:ir.actions.act_window,name:stock_aging_fsn_abc.action_stock_aging_wizard
+#: model:ir.ui.menu,name:stock_aging_fsn_abc.menu_stock_aging
+msgid "Inventory Aging"
+msgstr "Ancienneté du stock"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields.selection,name:stock_aging_fsn_abc.selection__stock_analysis_wizard__report_type__fsn
+msgid "FSN (Fast / Slow / Non-moving)"
+msgstr "FSN (Rapide / Lent / Immobile)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields.selection,name:stock_aging_fsn_abc.selection__stock_analysis_wizard__report_type__abc
+#: model:ir.actions.act_window,name:stock_aging_fsn_abc.action_stock_abc_wizard
+#: model:ir.ui.menu,name:stock_aging_fsn_abc.menu_stock_abc
+msgid "ABC Analysis"
+msgstr "Analyse ABC"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields.selection,name:stock_aging_fsn_abc.selection__stock_analysis_wizard__report_type__loss
+#: model:ir.actions.act_window,name:stock_aging_fsn_abc.action_stock_loss_wizard
+#: model:ir.ui.menu,name:stock_aging_fsn_abc.menu_stock_loss
+msgid "Inventory Loss"
+msgstr "Pertes de stock"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__output_format
+msgid "Output"
+msgstr "Format de sortie"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields.selection,name:stock_aging_fsn_abc.selection__stock_analysis_wizard__output_format__pdf
+msgid "PDF"
+msgstr "PDF"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields.selection,name:stock_aging_fsn_abc.selection__stock_analysis_wizard__output_format__xlsx
+msgid "Excel (XLSX)"
+msgstr "Excel (XLSX)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__as_of_date
+msgid "As of Date"
+msgstr "Date de référence"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__warehouse_ids
+msgid "Warehouses"
+msgstr "Entrepôts"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__location_ids
+msgid "Locations"
+msgstr "Emplacements"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__category_ids
+msgid "Product Categories"
+msgstr "Catégories de produits"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__product_ids
+msgid "Products"
+msgstr "Produits"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__bucket_1
+msgid "Bucket 1 up to (days)"
+msgstr "Tranche 1 jusqu'à (jours)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__bucket_2
+msgid "Bucket 2 up to (days)"
+msgstr "Tranche 2 jusqu'à (jours)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__bucket_3
+msgid "Bucket 3 up to (days)"
+msgstr "Tranche 3 jusqu'à (jours)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__bucket_4
+msgid "Bucket 4 up to (days)"
+msgstr "Tranche 4 jusqu'à (jours)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__lot_level
+msgid "Lot / Serial level"
+msgstr "Niveau lot / n° de série"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,help:stock_aging_fsn_abc.field_stock_analysis_wizard__lot_level
+msgid ""
+"Show the age of every lot / serial number instead of one line per product."
+msgstr ""
+"Affiche l'ancienneté de chaque lot / numéro de série au lieu d'une ligne par"
+" produit."
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__flag_obsolete
+msgid "Flag obsolete products"
+msgstr "Marquer les produits obsolètes"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,help:stock_aging_fsn_abc.field_stock_analysis_wizard__flag_obsolete
+msgid ""
+"Mark as Obsolete the products whose whole remaining stock is in the oldest "
+"bucket."
+msgstr ""
+"Marque comme obsolètes les produits dont tout le stock restant se trouve "
+"dans la tranche la plus ancienne."
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__lookback_days
+msgid "Look-back period (days)"
+msgstr "Période d'analyse (jours)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,help:stock_aging_fsn_abc.field_stock_analysis_wizard__lookback_days
+msgid ""
+"Number of days, ending on the 'As of Date', used to measure sales (FSN, ABC)"
+" or losses (Inventory Loss)."
+msgstr ""
+"Nombre de jours, se terminant à la « Date de référence », utilisés pour "
+"mesurer les ventes (FSN, ABC) ou les pertes (Pertes de stock)."
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__fsn_fast_ratio
+msgid "Fast if turnover >="
+msgstr "Rapide si rotation >="
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,help:stock_aging_fsn_abc.field_stock_analysis_wizard__fsn_fast_ratio
+msgid ""
+"Turnover = quantity sold in the period / quantity on hand. Products with "
+"sales and a turnover at or above this ratio are Fast, products with sales "
+"below it are Slow, products without sales are Non-moving."
+msgstr ""
+"Rotation = quantité vendue sur la période / quantité en stock. Les produits "
+"vendus dont la rotation est supérieure ou égale à ce ratio sont Rapides, les"
+" produits vendus sous ce ratio sont Lents, les produits sans vente sont "
+"Immobiles."
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__abc_a_pct
+msgid "A band (% of revenue)"
+msgstr "Tranche A (% du chiffre d'affaires)"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__abc_b_pct
+msgid "B band (% of revenue)"
+msgstr "Tranche B (% du chiffre d'affaires)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Company: %(company)s | As of: %(date)s | Valued at cost (%(currency)s)"
+msgstr ""
+"Société : %(company)s | Au : %(date)s | Valorisé au coût (%(currency)s)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Inventory Aging Report"
+msgstr "Rapport d'ancienneté du stock"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Aging"
+msgstr "Ancienneté"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Fast"
+msgstr "Rapide"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Slow"
+msgstr "Lent"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Non-moving"
+msgstr "Immobile"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "FSN Analysis (Fast / Slow / Non-moving)"
+msgstr "Analyse FSN (Rapide / Lent / Immobile)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "FSN"
+msgstr "FSN"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "ABC Analysis (by sales revenue)"
+msgstr "Analyse ABC (selon le chiffre d'affaires)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "ABC"
+msgstr "ABC"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Inventory Loss Report"
+msgstr "Rapport des pertes de stock"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Loss"
+msgstr "Pertes"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Code"
+msgstr "Code"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Product"
+msgstr "Produit"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Qty"
+msgstr "Qté"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Value"
+msgstr "Valeur"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Total quantity on hand"
+msgstr "Quantité totale en stock"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Total stock value"
+msgstr "Valeur totale du stock"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Products fully in oldest bucket (obsolete candidates)"
+msgstr ""
+"Produits entièrement dans la tranche la plus ancienne (candidats à "
+"l'obsolescence)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "On hand"
+msgstr "En stock"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Sold in period"
+msgstr "Vendu sur la période"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Turnover"
+msgstr "Rotation"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Last sale"
+msgstr "Dernière vente"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Days since last sale"
+msgstr "Jours depuis la dernière vente"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Stock value"
+msgstr "Valeur du stock"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Class"
+msgstr "Classe"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Total"
+msgstr "Total"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Rank"
+msgstr "Rang"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Sales revenue"
+msgstr "Chiffre d'affaires"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "% of revenue"
+msgstr "% du CA"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Cumulative %"
+msgstr "% cumulé"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Scrapped qty"
+msgstr "Qté mise au rebut"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Adjustment loss qty"
+msgstr "Qté perdue (ajustement)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Adjustment gain qty"
+msgstr "Qté retrouvée (ajustement)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Net lost qty"
+msgstr "Qté nette perdue"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Value lost"
+msgstr "Valeur perdue"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Only Inventory Managers can flag products as obsolete."
+msgstr ""
+"Seuls les responsables Inventaire peuvent marquer des produits comme "
+"obsolètes."
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "There is nothing to export for the selected filters."
+msgstr "Il n'y a rien à exporter avec les filtres sélectionnés."
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Aging buckets must be positive and strictly increasing."
+msgstr ""
+"Les tranches d'ancienneté doivent être positives et strictement croissantes."
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "ABC bands must be positive and A + B must not exceed 100%."
+msgstr ""
+"Les tranches ABC doivent être positives et A + B ne doit pas dépasser 100 %."
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "The look-back period must be at least one day."
+msgstr "La période d'analyse doit être d'au moins un jour."
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Locations: %s"
+msgstr "Emplacements : %s"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "All warehouses"
+msgstr "Tous les entrepôts"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Categories: %s"
+msgstr "Catégories : %s"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "%d selected product(s)"
+msgstr "%d produit(s) sélectionné(s)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Period: %(start)s to %(end)s (%(days)d days)"
+msgstr "Période : du %(start)s au %(end)s (%(days)d jours)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Lot/Serial"
+msgstr "Lot/N° de série"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Qty %s d"
+msgstr "Qté %s j"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Value %s d"
+msgstr "Valeur %s j"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Value in oldest bucket (%s d)"
+msgstr "Valeur de la tranche la plus ancienne (%s j)"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "%s products"
+msgstr "Produits : %s"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Class %s"
+msgstr "Classe %s"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "%(n)d products, revenue %(rev)s"
+msgstr "%(n)d produits, chiffre d'affaires %(rev)s"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Warning"
+msgstr "Avertissement"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "The Sales app is not installed: every product is class C."
+msgstr ""
+"L'application Ventes n'est pas installée : tous les produits sont en classe "
+"C."
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Bands: A %(a)s%%, B %(b)s%%, C %(c)s%%"
+msgstr "Tranches : A %(a)s %%, B %(b)s %%, C %(c)s %%"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+msgid "Net value lost"
+msgstr "Valeur nette perdue"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "Warehouses: %s"
+msgstr "Entrepôts : %s"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.model,name:stock_aging_fsn_abc.model_report_stock_aging_fsn_abc_report_stock_analysis
+msgid "Stock Analysis PDF Report"
+msgstr "Rapport PDF d'analyse du stock"
+
+#. module: stock_aging_fsn_abc
+#: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#, python-format
+msgid "%(n)d (stock value %(value)s)"
+msgstr "%(n)d (valeur du stock %(value)s)"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+#: model:ir.actions.report,name:stock_aging_fsn_abc.action_report_stock_analysis
+msgid "Stock Analysis"
+msgstr "Analyse du stock"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+msgid "Filters"
+msgstr "Filtres"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+msgid "Aging options"
+msgstr "Options d'ancienneté"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+msgid "Period"
+msgstr "Période"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+msgid "ABC bands"
+msgstr "Tranches ABC"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+msgid "Generate"
+msgstr "Générer"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.view_stock_analysis_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.actions.act_window,name:stock_aging_fsn_abc.action_stock_fsn_wizard
+#: model:ir.ui.menu,name:stock_aging_fsn_abc.menu_stock_fsn
+msgid "FSN Analysis"
+msgstr "Analyse FSN"
+
+#. module: stock_aging_fsn_abc
+#: model:ir.ui.menu,name:stock_aging_fsn_abc.menu_stock_analysis_root
+msgid "Aging & Analysis"
+msgstr "Ancienneté & analyses"
+
+#. module: stock_aging_fsn_abc
+#: model_terms:ir.ui.view,arch_db:stock_aging_fsn_abc.report_stock_analysis
+msgid "No data for the selected filters."
+msgstr "Aucune donnée pour les filtres sélectionnés."

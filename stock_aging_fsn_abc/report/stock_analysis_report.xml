@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="paperformat_stock_analysis" model="report.paperformat">
+        <field name="name">Stock Analysis (A4 Landscape)</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">15</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_spacing">15</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <record id="action_report_stock_analysis" model="ir.actions.report">
+        <field name="name">Stock Analysis</field>
+        <field name="model">stock.analysis.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">stock_aging_fsn_abc.report_stock_analysis</field>
+        <field name="report_file">stock_aging_fsn_abc.report_stock_analysis</field>
+        <field name="print_report_name">'Stock_%s_%s' % (object.report_type, object.as_of_date)</field>
+        <field name="paperformat_id" ref="paperformat_stock_analysis"/>
+    </record>
+
+    <template id="report_stock_analysis">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page" style="font-size: 10px;">
+                    <h4 t-esc="report['title']"/>
+                    <p class="text-muted" t-esc="report['subtitle']"/>
+
+                    <t t-if="report['rows']">
+                        <table class="table table-sm table-bordered">
+                            <thead>
+                                <tr>
+                                    <t t-foreach="report['columns']" t-as="col">
+                                        <th t-attf-class="{{ 'text-start' if col['type'] == 'text' else 'text-end' }}">
+                                            <t t-esc="col['label']"/>
+                                        </th>
+                                    </t>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="report['rows']" t-as="row">
+                                    <tr>
+                                        <t t-foreach="range(len(row))" t-as="i">
+                                            <td t-attf-class="{{ 'text-start' if report['columns'][i]['type'] == 'text' else 'text-end' }}">
+                                                <t t-esc="fmt(row[i], report['columns'][i]['type'])"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
+                            </tbody>
+                            <tfoot t-if="report['totals']">
+                                <tr class="fw-bold">
+                                    <t t-foreach="range(len(report['totals']))" t-as="i">
+                                        <td t-attf-class="{{ 'text-start' if report['columns'][i]['type'] == 'text' else 'text-end' }}">
+                                            <t t-esc="fmt(report['totals'][i], report['columns'][i]['type'])"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </t>
+                    <p t-else="" class="text-center">No data for the selected filters.</p>
+
+                    <table t-if="report['summary']" class="table table-sm" style="width: auto; margin-top: 15px;">
+                        <tbody>
+                            <t t-foreach="report['summary']" t-as="item">
+                                <tr>
+                                    <td class="fw-bold"><t t-esc="item[0]"/></td>
+                                    <td><t t-esc="item[1]"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
