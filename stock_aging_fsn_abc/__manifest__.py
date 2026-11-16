@@ -4,6 +4,7 @@
     'version': '17.0.1.0.0',
     'category': 'Inventory/Inventory',
     'author': 'feddad.imad@gmail.com',
+    'images': ['static/description/banner.png'],
     'summary': 'Inventory aging (FIFO buckets), FSN, ABC and inventory loss reports in PDF and XLSX',
     'description': """
 Stock Aging, FSN & ABC Analysis
