@@ -20,9 +20,9 @@ One wizard, four reports (PDF, and XLSX for the first three):
 Filter by warehouse, location, category or product. Optionally flag as
 "Obsolete" the products whose whole stock sits in the oldest bucket.
 """,
-    'depends': ['stock'],
+    'depends': ['stock','ewe_logic'],
     'data': [
-        'security/ir.model.access.csv',
+         'security/ir.model.access.csv',
 
         'report/stock_analysis_report.xml',
         'views/product_views.xml',

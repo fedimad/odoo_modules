@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+import io
+import zipfile
+
 from odoo.tests.common import TransactionCase, tagged
 
 from ..report.stock_analysis_report import blend, donut_svg, pareto_svg, smooth_path
@@ -34,3 +37,14 @@ class TestReportStyle(TransactionCase):
             wizard = self.env['stock.analysis.wizard'].create({'report_type': report_type})
             html, _fmt = report._render_qweb_html(report.report_name, wizard.ids)
             self.assertIn(b'sa_title', html)
+
+    def test_xlsx_all_reports(self):
+        for report_type in ('aging', 'fsn', 'abc', 'loss'):
+            wizard = self.env['stock.analysis.wizard'].create({'report_type': report_type, 'output_format': 'xlsx'})
+            report = wizard._prepare_report()
+            if not report['rows']:
+                continue
+            archive = zipfile.ZipFile(io.BytesIO(wizard._build_xlsx(report)))
+            names = archive.namelist()
+            self.assertIn('xl/worksheets/sheet1.xml', names)   # dashboard
+            self.assertIn('xl/worksheets/sheet2.xml', names)   # data

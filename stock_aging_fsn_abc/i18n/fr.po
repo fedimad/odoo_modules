@@ -114,6 +114,7 @@ msgstr "Catégories de produits"
 #. odoo-python
 #: model:ir.model.fields,field_description:stock_aging_fsn_abc.field_stock_analysis_wizard__product_ids
 #: code:addons/stock_aging_fsn_abc/report/stock_analysis_report.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Products"
 msgstr "Produits"
 
@@ -223,17 +224,23 @@ msgid "Aging"
 msgstr "Ancienneté"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Fast"
 msgstr "Rapide"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Slow"
 msgstr "Lent"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Non-moving"
 msgstr "Immobile"
 
@@ -278,12 +285,16 @@ msgid "Product"
 msgstr "Produit"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Qty"
 msgstr "Qté"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Value"
 msgstr "Valeur"
 
@@ -335,17 +346,23 @@ msgid "Days since last sale"
 msgstr "Jours depuis la dernière vente"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Stock value"
 msgstr "Valeur du stock"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Class"
 msgstr "Classe"
 
 #. module: stock_aging_fsn_abc
+#. odoo-python
 #: code:addons/stock_aging_fsn_abc/wizard/stock_analysis_wizard.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 msgid "Total"
 msgstr "Total"
 
@@ -588,6 +605,7 @@ msgstr "Aucune donnée pour les filtres sélectionnés."
 #. module: stock_aging_fsn_abc
 #. odoo-python
 #: code:addons/stock_aging_fsn_abc/report/stock_analysis_report.py:0
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
 #, python-format
 msgid "%s d"
 msgstr "%s j"
@@ -609,3 +627,57 @@ msgid ""
 msgstr ""
 "Rotation = quantité vendue sur la période / quantité en stock. Aucune vente "
 ": Immobile. Rotation supérieure ou égale à %(ratio)s : Rapide. Sinon : Lent."
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Age bucket"
+msgstr "Tranche d'âge"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "% of value"
+msgstr "% de la valeur"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Stock value by age"
+msgstr "Valeur du stock par ancienneté"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Quantity by age"
+msgstr "Quantité par ancienneté"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Products by class"
+msgstr "Produits par classe"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Stock value by class"
+msgstr "Valeur du stock par classe"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Revenue and cumulative share"
+msgstr "Chiffre d'affaires et part cumulée"
+
+#. module: stock_aging_fsn_abc
+#. odoo-python
+#: code:addons/stock_aging_fsn_abc/report/stock_analysis_xlsx.py:0
+msgid "Top losses by value"
+msgstr "Principales pertes en valeur"
